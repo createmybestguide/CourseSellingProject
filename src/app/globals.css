@@ -95,17 +95,6 @@ img {
   color: #0f172a;
 }
 
-.icon-button {
-  display: inline-grid;
-  min-height: 44px;
-  min-width: 44px;
-  place-items: center;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  background: #fff;
-  color: #0f172a;
-}
-
 .card {
   border: 1px solid #e2e8f0;
   border-radius: 8px;

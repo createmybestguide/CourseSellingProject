@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { FaPlayCircle } from "react-icons/fa";
-import { Breadcrumbs } from "@/src/components/Breadcrumbs";
 import { SectionHeading } from "@/src/components/SectionHeading";
 import { testimonials } from "@/src/lib/content";
 
@@ -12,23 +11,20 @@ export const metadata: Metadata = {
 
 export default function TestimonialsPage() {
   return (
-    <>
-      <Breadcrumbs items={[{ label: "Testimonials" }]} />
-      <section className="section">
-        <div className="container">
-          <SectionHeading eyebrow="Testimonials" title="Student reviews and success stories" />
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {testimonials.map((item) => (
-              <article className="card p-6" key={item.name}>
-                <FaPlayCircle className="text-3xl text-sky-700" aria-label="Video testimonial placeholder" />
-                <p className="mt-5 leading-7 text-slate-700">“{item.quote}”</p>
-                <h2 className="mt-5 text-lg font-bold text-slate-950">{item.name}</h2>
-                <p className="text-sm font-semibold text-slate-500">{item.role}</p>
-              </article>
-            ))}
-          </div>
+    <section className="section">
+      <div className="container">
+        <SectionHeading eyebrow="Testimonials" title="Student reviews and success stories" />
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {testimonials.map((item) => (
+            <article className="card p-6" key={item.name}>
+              <FaPlayCircle className="text-3xl text-sky-700" aria-label="Video testimonial placeholder" />
+              <p className="mt-5 leading-7 text-slate-700">“{item.quote}”</p>
+              <h2 className="mt-5 text-lg font-bold text-slate-950">{item.name}</h2>
+              <p className="text-sm font-semibold text-slate-500">{item.role}</p>
+            </article>
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

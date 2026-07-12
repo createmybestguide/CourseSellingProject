@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { FloatingWhatsApp } from "@/src/components/FloatingWhatsApp";
 import { Footer } from "@/src/components/Footer";
 import { Header } from "@/src/components/Header";
 import { JsonLd } from "@/src/components/JsonLd";
@@ -88,6 +89,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   );

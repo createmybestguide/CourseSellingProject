@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Breadcrumbs } from "@/src/components/Breadcrumbs";
 import { CourseCard } from "@/src/components/CourseCard";
 import { SectionHeading } from "@/src/components/SectionHeading";
 import { categories, getCategory, getCoursesByCategory } from "@/src/lib/courses";
@@ -29,16 +28,13 @@ export default async function CategoryPage({ params }: { params: RouteParams }) 
   const categoryCourses = getCoursesByCategory(category.name);
 
   return (
-    <>
-      <Breadcrumbs items={[{ label: "Categories", href: "/categories" }, { label: category.name }]} />
-      <section className="section">
-        <div className="container">
-          <SectionHeading eyebrow="Category" title={category.name} text={category.description} />
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {categoryCourses.map((course) => <CourseCard key={course.slug} course={course} />)}
-          </div>
+    <section className="section">
+      <div className="container">
+        <SectionHeading eyebrow="Category" title={category.name} text={category.description} />
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {categoryCourses.map((course) => <CourseCard key={course.slug} course={course} />)}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

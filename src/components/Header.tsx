@@ -1,29 +1,51 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { FaBars, FaTimes, FaWhatsapp } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { navLinks, siteConfig } from "@/src/lib/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const headerLinks = [{ label: "Home", href: "/" }, ...navLinks];
+
+  function isActive(href: string) {
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(`${href}/`);
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
       <div className="container flex h-18 items-center justify-between">
         <Link href="/" className="flex items-center gap-3" aria-label={`${siteConfig.name} home`}>
-          <span className="grid h-11 w-11 place-items-center rounded-lg bg-slate-950 text-sm font-bold text-white">
-            OE
-          </span>
-          <span>
-            <span className="block text-base font-bold text-slate-950">{siteConfig.shortName}</span>
-            <span className="block text-xs font-medium uppercase tracking-wide text-slate-500">Maritime Training</span>
+          <span className="relative block h-11 w-11 shrink-0 overflow-hidden rounded-lg bg-slate-950 shadow-sm">
+            <Image
+              src="/dvr-logo-small.png"
+              alt="DVR logo"
+              width={44}
+              height={44}
+              sizes="44px"
+              className="h-full w-full object-cover"
+              priority
+            />
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-sm font-semibold text-slate-700 hover:text-sky-700">
+        <nav className="hidden items-center gap-2 lg:flex" aria-label="Primary navigation">
+          {headerLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              aria-current={isActive(link.href) ? "page" : undefined}
+              className={`rounded-md px-3 py-2 text-sm font-semibold transition ${
+                isActive(link.href)
+                  ? "bg-sky-100 text-sky-800"
+                  : "text-slate-700 hover:bg-slate-100 hover:text-sky-700"
+              }`}
+            >
               {link.label}
             </Link>
           ))}
@@ -40,7 +62,7 @@ export function Header() {
 
         <button
           type="button"
-          className="icon-button lg:hidden"
+          className="grid min-h-11 min-w-11 place-items-center rounded-lg border border-slate-300 bg-white text-slate-950 lg:hidden"
           aria-label="Toggle navigation menu"
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
@@ -52,11 +74,16 @@ export function Header() {
       {open ? (
         <div className="border-t border-slate-200 bg-white lg:hidden">
           <nav className="container grid gap-1 py-4" aria-label="Mobile navigation">
-            {navLinks.map((link) => (
+            {headerLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-md px-3 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-100"
+                aria-current={isActive(link.href) ? "page" : undefined}
+                className={`rounded-md px-3 py-3 text-sm font-semibold ${
+                  isActive(link.href)
+                    ? "bg-sky-100 text-sky-800"
+                    : "text-slate-800 hover:bg-slate-100"
+                }`}
                 onClick={() => setOpen(false)}
               >
                 {link.label}
@@ -74,13 +101,6 @@ export function Header() {
         </div>
       ) : null}
 
-      <Link
-        href={`https://wa.me/${siteConfig.whatsapp}`}
-        className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-emerald-500 text-2xl text-white shadow-xl shadow-emerald-900/20 transition hover:bg-emerald-600"
-        aria-label="Chat on WhatsApp"
-      >
-        <FaWhatsapp />
-      </Link>
     </header>
   );
 }

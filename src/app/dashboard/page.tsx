@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FaClock, FaCreditCard, FaFileAlt, FaUserCheck } from "react-icons/fa";
-import { Breadcrumbs } from "@/src/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Student Dashboard",
@@ -18,28 +17,25 @@ const dashboardItems = [
 
 export default function DashboardPage() {
   return (
-    <>
-      <Breadcrumbs items={[{ label: "Dashboard" }]} />
-      <section className="section">
-        <div className="container">
-          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="eyebrow">Student dashboard</p>
-              <h1 className="mt-3 text-4xl font-black text-slate-950 md:text-5xl">Enrollment status tracking</h1>
-            </div>
-            <Link className="btn btn-primary" href="/enroll">New Application</Link>
+    <section className="section">
+      <div className="container">
+        <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="eyebrow">Student dashboard</p>
+            <h1 className="mt-3 text-4xl font-black text-slate-950 md:text-5xl">Enrollment status tracking</h1>
           </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {dashboardItems.map((item) => (
-              <article className="card p-6" key={item.title}>
-                <item.icon className="text-2xl text-sky-700" />
-                <h2 className="mt-4 text-lg font-bold text-slate-950">{item.title}</h2>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
-              </article>
-            ))}
-          </div>
+          <Link className="btn btn-primary" href="/enroll">New Application</Link>
         </div>
-      </section>
-    </>
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {dashboardItems.map((item) => (
+            <article className="card p-6" key={item.title}>
+              <item.icon className="text-2xl text-sky-700" />
+              <h2 className="mt-4 text-lg font-bold text-slate-950">{item.title}</h2>
+              <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaCreditCard, FaDownload, FaFileSignature } from "react-icons/fa";
-import { Breadcrumbs } from "@/src/components/Breadcrumbs";
 import { JsonLd } from "@/src/components/JsonLd";
 import { LeadForm } from "@/src/components/LeadForm";
 import { courses, getCourse } from "@/src/lib/courses";
@@ -59,7 +58,6 @@ export default async function CoursePage({ params }: { params: RouteParams }) {
   return (
     <>
       <JsonLd data={schema} />
-      <Breadcrumbs items={[{ label: "Courses", href: "/courses" }, { label: course.name }]} />
       <section className="section pt-10">
         <div className="container grid gap-10 lg:grid-cols-[1fr_0.42fr]">
           <article>
