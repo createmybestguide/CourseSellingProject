@@ -21,7 +21,7 @@ export default function AdminPage() {
             [FaFileExport, "CSV and Excel exports for leads and payments"],
           ].map(([Icon, text]) => (
             <div className="card p-6" key={String(text)}>
-              <Icon className="text-2xl text-sky-700" />
+              <Icon className="text-2xl text-[var(--brand)]" />
               <p className="mt-4 text-sm font-semibold leading-6 text-slate-700">{String(text)}</p>
             </div>
           ))}
@@ -29,7 +29,7 @@ export default function AdminPage() {
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {adminModules.map((module) => (
             <div className="card flex items-center gap-3 p-5" key={module}>
-              <FaUsersCog className="text-sky-700" />
+              <FaUsersCog className="text-[var(--brand)]" />
               <h2 className="text-sm font-bold text-slate-950">{module}</h2>
             </div>
           ))}

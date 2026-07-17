@@ -25,7 +25,7 @@ export default function CategoriesPage() {
               <div className="p-6">
                 <h2 className="text-xl font-bold text-slate-950">{category.name}</h2>
                 <p className="mt-3 text-sm leading-6 text-slate-600">{category.description}</p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-sky-800">View programs <FaArrowRight /></span>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[var(--brand)]">View programs <FaArrowRight /></span>
               </div>
             </Link>
           ))}

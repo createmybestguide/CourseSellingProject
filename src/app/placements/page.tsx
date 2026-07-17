@@ -17,7 +17,7 @@ export default function PlacementsPage() {
         <div className="metric-grid mt-10">
           {stats.map((stat) => (
             <div className="card p-5 text-center" key={stat.label}>
-              <strong className="block text-3xl font-black text-sky-800">{stat.value}</strong>
+              <strong className="block text-3xl font-black text-[var(--brand)]">{stat.value}</strong>
               <span className="mt-2 block text-sm font-bold text-slate-600">{stat.label}</span>
             </div>
           ))}
@@ -30,7 +30,7 @@ export default function PlacementsPage() {
             [FaBuilding, "Hiring partners"],
           ].map(([Icon, text]) => (
             <div className="card p-5" key={String(text)}>
-              <Icon className="text-2xl text-sky-700" />
+              <Icon className="text-2xl text-[var(--brand)]" />
               <h2 className="mt-4 text-lg font-bold text-slate-950">{String(text)}</h2>
             </div>
           ))}

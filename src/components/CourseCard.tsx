@@ -17,10 +17,10 @@ export function CourseCard({ course }: { course: Course }) {
         <h3 className="mt-4 text-xl font-bold text-slate-950">{course.name}</h3>
         <p className="mt-3 text-sm leading-6 text-slate-600">{course.summary}</p>
         <div className="mt-5 grid gap-2 text-sm font-semibold text-slate-700">
-          <span className="flex items-center gap-2"><FaClock className="text-sky-700" /> {course.duration}</span>
-          <span className="flex items-center gap-2"><FaRupeeSign className="text-sky-700" /> {course.fees.replace("₹", "")}</span>
+          <span className="flex items-center gap-2"><FaClock className="text-[var(--brand)]" /> {course.duration}</span>
+          <span className="flex items-center gap-2"><FaRupeeSign className="text-[var(--brand)]" /> {course.fees.replace("₹", "")}</span>
         </div>
-        <Link className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-sky-800 group-hover:gap-3" href={`/courses/${course.slug}`}>
+        <Link className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[var(--brand)] group-hover:gap-3" href={`/courses/${course.slug}`}>
           View course <FaArrowRight aria-hidden="true" />
         </Link>
       </div>

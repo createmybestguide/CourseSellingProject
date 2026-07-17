@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
-  --brand: #075985;
-  --brand-dark: #0f172a;
-  --accent: #f59e0b;
+  --background: #f6f8fc;
+  --foreground: #071d3f;
+  --brand: #003b7a;
+  --brand-dark: #001f4d;
+  --brand-deep: #00163a;
+  --brand-soft: #e7f0ff;
+  --accent: #ff7a00;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
 }
 
 * {
@@ -25,7 +27,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--background);
+  background:
+    radial-gradient(circle at top left, rgb(0 59 122 / 8%), transparent 32rem),
+    var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -39,7 +43,7 @@ img {
 }
 
 :focus-visible {
-  outline: 3px solid #f59e0b;
+  outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
 
@@ -71,43 +75,43 @@ img {
 }
 
 .btn-primary {
-  background: #075985;
+  background: var(--brand);
   color: #fff;
-  box-shadow: 0 12px 24px rgb(7 89 133 / 18%);
+  box-shadow: 0 12px 24px rgb(0 59 122 / 20%);
 }
 
 .btn-primary:hover {
-  background: #0c4a6e;
+  background: var(--brand-dark);
 }
 
 .btn-secondary {
-  border: 1px solid #cbd5e1;
+  border: 1px solid rgb(0 59 122 / 22%);
   background: #fff;
-  color: #0f172a;
+  color: var(--brand-dark);
 }
 
 .btn-secondary:hover,
 .btn-ghost:hover {
-  background: #f1f5f9;
+  background: var(--brand-soft);
 }
 
 .btn-ghost {
-  color: #0f172a;
+  color: var(--brand-dark);
 }
 
 .card {
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgb(0 59 122 / 12%);
   border-radius: 8px;
   background: #fff;
-  box-shadow: 0 18px 35px rgb(15 23 42 / 7%);
+  box-shadow: 0 18px 35px rgb(0 31 77 / 8%);
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
   border-radius: 999px;
-  background: #e0f2fe;
-  color: #075985;
+  background: var(--brand-soft);
+  color: var(--brand);
   padding: 0.35rem 0.65rem;
   font-size: 0.75rem;
   font-weight: 800;
@@ -123,23 +127,23 @@ img {
   font-weight: 900;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #0369a1;
+  color: var(--brand);
 }
 
 .hero-overlay {
   background:
-    linear-gradient(90deg, rgb(15 23 42 / 92%), rgb(15 23 42 / 70%) 46%, rgb(15 23 42 / 22%)),
-    linear-gradient(0deg, rgb(15 23 42 / 55%), rgb(15 23 42 / 8%));
+    linear-gradient(90deg, rgb(0 22 58 / 94%), rgb(0 31 77 / 75%) 46%, rgb(0 59 122 / 24%)),
+    linear-gradient(0deg, rgb(0 22 58 / 58%), rgb(0 31 77 / 8%));
 }
 
 .form-panel {
   display: grid;
   gap: 1rem;
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgb(0 59 122 / 14%);
   border-radius: 8px;
   background: #fff;
   padding: clamp(1.2rem, 3vw, 2rem);
-  box-shadow: 0 18px 35px rgb(15 23 42 / 7%);
+  box-shadow: 0 18px 35px rgb(0 31 77 / 8%);
 }
 
 .form-panel label {
@@ -154,10 +158,10 @@ img {
 .form-panel select,
 .form-panel textarea {
   width: 100%;
-  border: 1px solid #cbd5e1;
+  border: 1px solid rgb(0 59 122 / 20%);
   border-radius: 8px;
   background: #fff;
-  color: #0f172a;
+  color: var(--foreground);
   font: inherit;
   font-weight: 500;
   min-height: 44px;

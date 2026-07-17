@@ -29,7 +29,7 @@ export default function DashboardPage() {
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {dashboardItems.map((item) => (
             <article className="card p-6" key={item.title}>
-              <item.icon className="text-2xl text-sky-700" />
+              <item.icon className="text-2xl text-[var(--brand)]" />
               <h2 className="mt-4 text-lg font-bold text-slate-950">{item.title}</h2>
               <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
             </article>

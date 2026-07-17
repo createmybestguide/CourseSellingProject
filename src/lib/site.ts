@@ -1,16 +1,18 @@
 export const siteConfig = {
-  name: "OceanEdge Maritime Training Institute",
-  shortName: "OceanEdge",
-  url: "https://oceanedge-training.example.com",
+  name: "DVR Global Careers",
+  shortName: "DVR",
+  url: "https://dvrglobalcareers.example.com",
   description:
-    "Professional marine, shipping, logistics, oil and gas, cruise, and industrial safety training with placement assistance.",
+    "Professional oil and gas, marine, shipping, logistics, cruise, and industrial safety training with placement assistance.",
   phone: "+91 98765 43210",
   whatsapp: "919876543210",
-  email: "admissions@oceanedge.edu",
+  email: "admissions@dvrglobalcareers.com",
   address: "Harbour Road, Navi Mumbai, Maharashtra 400001",
   city: "Navi Mumbai",
   region: "Maharashtra",
   postalCode: "400001",
+  logo: "/dvr-global-careers-logo.png",
+  logoSmall: "/dvr-global-careers-logo-small.png",
 };
 
 export const navLinks = [

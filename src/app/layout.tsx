@@ -1,23 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { FloatingWhatsApp } from "@/src/components/FloatingWhatsApp";
 import { Footer } from "@/src/components/Footer";
 import { Header } from "@/src/components/Header";
 import { JsonLd } from "@/src/components/JsonLd";
 import { siteConfig } from "@/src/lib/site";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -41,6 +28,10 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
   },
+  icons: {
+    icon: siteConfig.logoSmall,
+    apple: siteConfig.logoSmall,
+  },
   robots: {
     index: true,
     follow: true,
@@ -57,7 +48,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#075985",
+  themeColor: "#003b7a",
 };
 
 export default function RootLayout({
@@ -70,6 +61,7 @@ export default function RootLayout({
     "@type": ["EducationalOrganization", "LocalBusiness"],
     name: siteConfig.name,
     url: siteConfig.url,
+    logo: `${siteConfig.url}${siteConfig.logo}`,
     telephone: siteConfig.phone,
     email: siteConfig.email,
     address: {
@@ -83,7 +75,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang="en" data-scroll-behavior="smooth" className="h-full antialiased">
       <body className="flex min-h-full flex-col">
         <JsonLd data={organizationSchema} />
         <Header />

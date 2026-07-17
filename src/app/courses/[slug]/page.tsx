@@ -117,7 +117,7 @@ export default async function CoursePage({ params }: { params: RouteParams }) {
 function Info({ title, text }: { title: string; text: string }) {
   return (
     <div className="card p-5">
-      <h2 className="text-sm font-black uppercase tracking-wide text-sky-800">{title}</h2>
+      <h2 className="text-sm font-black uppercase tracking-wide text-[var(--brand)]">{title}</h2>
       <p className="mt-3 text-sm leading-6 text-slate-700">{text}</p>
     </div>
   );

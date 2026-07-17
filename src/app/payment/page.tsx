@@ -23,7 +23,7 @@ export default function PaymentPage() {
               [FaFileInvoice, "Invoice generation and admin payment report structure"],
             ].map(([Icon, text]) => (
               <div className="card flex gap-4 p-5" key={String(text)}>
-                <Icon className="mt-1 text-sky-700" />
+                <Icon className="mt-1 text-[var(--brand)]" />
                 <p className="text-sm font-semibold leading-6 text-slate-700">{String(text)}</p>
               </div>
             ))}

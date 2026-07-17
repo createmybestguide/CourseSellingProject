@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <>
       <JsonLd data={faqSchema} />
-      <section className="relative min-h-[720px] overflow-hidden bg-slate-950 text-white">
+      <section className="relative min-h-[720px] overflow-hidden bg-[var(--brand-deep)] text-white">
         <Image className="object-cover" src={imageAssets.hero} alt="Maritime training institute campus and harbour operations" fill priority sizes="100vw" />
         <div className="hero-overlay absolute inset-0" />
         <div className="container relative grid min-h-[720px] items-center pb-16 pt-20 lg:grid-cols-[1.05fr_0.75fr]">
@@ -78,7 +78,7 @@ export default function Home() {
                 [FaBriefcase, "Placement tracking"],
               ].map(([Icon, label]) => (
                 <div key={String(label)} className="card p-4">
-                  <Icon className="text-2xl text-sky-700" />
+                  <Icon className="text-2xl text-[var(--brand)]" />
                   <p className="mt-3 text-sm font-bold text-slate-800">{String(label)}</p>
                 </div>
               ))}
@@ -101,7 +101,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section bg-slate-950 text-white">
+      <section className="section bg-[var(--brand-deep)] text-white">
         <div className="container grid gap-10 lg:grid-cols-[0.85fr_1fr]">
           <div>
             <p className="eyebrow text-amber-300">Placement assistance</p>
@@ -131,7 +131,7 @@ export default function Home() {
                 <div className="p-5">
                   <h3 className="text-lg font-bold text-slate-950">{category.name}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-600">{category.description}</p>
-                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-sky-800">Browse <FaArrowRight /></span>
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[var(--brand)]">Browse <FaArrowRight /></span>
                 </div>
               </Link>
             ))}
@@ -146,8 +146,8 @@ export default function Home() {
             <div className="mt-10 grid gap-5">
               {testimonials.map((item) => (
                 <blockquote className="card p-6" key={item.name}>
-                  <p className="leading-7 text-slate-700">“{item.quote}”</p>
-                  <footer className="mt-4 text-sm font-bold text-slate-950">{item.name} · {item.role}</footer>
+                  <p className="leading-7 text-slate-700">&quot;{item.quote}&quot;</p>
+                  <footer className="mt-4 text-sm font-bold text-slate-950">{item.name} - {item.role}</footer>
                 </blockquote>
               ))}
             </div>
@@ -194,3 +194,4 @@ export default function Home() {
     </>
   );
 }
+
