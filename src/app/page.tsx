@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaArrowRight, FaBriefcase, FaCertificate, FaCheckCircle, FaFileDownload, FaUserGraduate } from "react-icons/fa";
+import { FaArrowRight, FaBriefcase, FaCertificate, FaCheckCircle, FaFileDownload, FaIndustry, FaShip, FaUserGraduate } from "react-icons/fa";
 import { CourseCard } from "@/src/components/CourseCard";
 import { JsonLd } from "@/src/components/JsonLd";
 import { LeadForm } from "@/src/components/LeadForm";
 import { SectionHeading } from "@/src/components/SectionHeading";
 import { categories, courses } from "@/src/lib/courses";
-import { faqs, galleryItems, recruiters, stats, testimonials, whyChooseUs } from "@/src/lib/content";
+import { faqs, galleryItems, recruiters, testimonials, whyChooseUs } from "@/src/lib/content";
 import { imageAssets, siteConfig } from "@/src/lib/site";
 
 export default function Home() {
@@ -23,30 +23,53 @@ export default function Home() {
   return (
     <>
       <JsonLd data={faqSchema} />
-      <section className="relative min-h-[720px] overflow-hidden bg-[var(--brand-deep)] text-white">
-        <Image className="object-cover" src={imageAssets.hero} alt="Maritime training institute campus and harbour operations" fill priority sizes="100vw" />
-        <div className="hero-overlay absolute inset-0" />
-        <div className="container relative grid min-h-[720px] items-center pb-16 pt-20 lg:grid-cols-[1.05fr_0.75fr]">
-          <div className="max-w-3xl">
-            <p className="text-sm font-black uppercase tracking-widest text-amber-300">Admissions open for 2026 batches</p>
-            <h1 className="mt-5 text-4xl font-black leading-tight tracking-normal md:text-6xl">
-              Job-focused maritime, logistics, cruise, and safety training
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-100">
-              Build practical skills, complete documentation, apply online, pay securely, and track your enrollment with a placement-ready institute platform.
+      <section className="relative overflow-hidden bg-[#eef5ff] text-[var(--brand-deep)]">
+        <Image
+          className="object-cover object-center"
+          src={imageAssets.hero}
+          alt="Offshore oil platform and industrial energy career background"
+          fill
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgb(237_246_255_/_88%),rgb(255_255_255_/_70%)_42%,rgb(255_122_0_/_18%)),linear-gradient(0deg,rgb(0_22_58_/_34%),rgb(255_255_255_/_18%)_58%,rgb(255_255_255_/_76%))]" />
+        <div className="container relative grid min-h-[720px] content-between gap-10 pb-10 pt-20">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--accent)] md:text-sm">
+              Admissions open for 2026 batches
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/enroll" className="btn btn-primary">Apply Now</Link>
-              <Link href="/courses" className="btn border border-white/30 bg-white/10 text-white hover:bg-white/20">Explore Courses</Link>
+            <h1 className="mt-4 text-4xl font-black uppercase leading-[0.98] tracking-normal text-[var(--brand)] md:text-6xl lg:text-7xl">
+              Global Opportunities
+              <span className="block text-[var(--accent)]">Endless Possibilities</span>
+            </h1>
+            <p className="mx-auto mt-4 max-w-2xl text-sm font-bold leading-6 text-slate-700 md:text-base">
+              Your gateway to exciting careers in oil &amp; gas, energy, marine, and beyond.
+            </p>
+            <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+              <Link href="/courses" className="btn btn-primary">Explore Courses</Link>
+              <Link href="/enroll" className="btn bg-[var(--accent)] text-white shadow-lg shadow-orange-900/20 hover:bg-[#e96900]">Apply Now</Link>
             </div>
           </div>
-          <div className="mt-10 grid gap-4 rounded-lg border border-white/20 bg-white/10 p-5 backdrop-blur lg:mt-0">
-            {stats.map((stat) => (
-              <div key={stat.label} className="border-b border-white/10 pb-4 last:border-0 last:pb-0">
-                <strong className="block text-3xl font-black text-white">{stat.value}</strong>
-                <span className="text-sm font-semibold text-slate-200">{stat.label}</span>
-              </div>
-            ))}
+
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="rounded-lg border border-white/35 bg-[rgb(0_59_122_/_88%)] p-5 text-center text-white shadow-2xl shadow-slate-950/20 backdrop-blur">
+              <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border-2 border-white/70 text-2xl">
+                <FaShip aria-hidden="true" />
+              </span>
+              <h2 className="mt-4 text-lg font-black uppercase tracking-wide">Offshore Opportunities</h2>
+              <p className="mx-auto mt-2 max-w-md text-sm font-semibold leading-6 text-blue-50">
+                Learn high-growth careers on offshore rigs, platforms, vessels, and marine operations.
+              </p>
+            </div>
+            <div className="rounded-lg border border-white/35 bg-[rgb(255_122_0_/_88%)] p-5 text-center text-white shadow-2xl shadow-orange-950/20 backdrop-blur">
+              <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border-2 border-white/75 text-2xl">
+                <FaIndustry aria-hidden="true" />
+              </span>
+              <h2 className="mt-4 text-lg font-black uppercase tracking-wide">Onshore Opportunities</h2>
+              <p className="mx-auto mt-2 max-w-md text-sm font-semibold leading-6 text-orange-50">
+                Build a successful career in refineries, plants, terminals, logistics, and industrial safety.
+              </p>
+            </div>
           </div>
         </div>
       </section>
