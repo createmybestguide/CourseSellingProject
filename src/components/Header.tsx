@@ -18,10 +18,10 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[rgb(0_59_122_/_14%)] bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-[rgb(7_75_143_/_12%)] bg-[rgb(255_253_250_/_88%)] shadow-sm shadow-slate-950/5 backdrop-blur-xl">
       <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-3" aria-label={`${siteConfig.name} home`}>
-          <span className="relative block h-14 w-36 shrink-0 overflow-hidden rounded-md bg-white shadow-sm">
+          <span className="relative block h-14 w-36 shrink-0 overflow-hidden rounded-md bg-white shadow-sm ring-1 ring-[rgb(7_75_143_/_10%)]">
             <Image
               src={siteConfig.logo}
               alt={`${siteConfig.name} logo`}
@@ -42,8 +42,8 @@ export function Header() {
               aria-current={isActive(link.href) ? "page" : undefined}
               className={`rounded-md px-3 py-2 text-sm font-semibold transition ${
                 isActive(link.href)
-                  ? "bg-[var(--brand-soft)] text-[var(--brand)]"
-                  : "text-slate-700 hover:bg-[var(--brand-soft)] hover:text-[var(--brand)]"
+                  ? "bg-[var(--accent-soft)] text-[var(--brand)]"
+                  : "text-slate-700 hover:bg-[var(--accent-soft)] hover:text-[var(--brand)]"
               }`}
             >
               {link.label}
@@ -55,14 +55,14 @@ export function Header() {
           <Link className="btn btn-ghost" href="/login">
             Login
           </Link>
-          {/* <Link className="btn btn-primary" href="/enroll">
+          <Link className="btn btn-primary" href="/enroll">
             Apply Now
-          </Link> */}
+          </Link>
         </div>
 
         <button
           type="button"
-          className="grid min-h-11 min-w-11 place-items-center rounded-lg border border-[rgb(0_59_122_/_20%)] bg-white text-[var(--brand-dark)] lg:hidden"
+          className="grid min-h-11 min-w-11 place-items-center rounded-lg border border-[rgb(7_75_143_/_18%)] bg-white text-[var(--brand-dark)] shadow-sm lg:hidden"
           aria-label="Toggle navigation menu"
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
@@ -72,7 +72,7 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="border-t border-[rgb(0_59_122_/_14%)] bg-white lg:hidden">
+        <div className="border-t border-[rgb(7_75_143_/_12%)] bg-[var(--surface)] lg:hidden">
           <nav className="container grid gap-1 py-4" aria-label="Mobile navigation">
             {headerLinks.map((link) => (
               <Link
@@ -81,8 +81,8 @@ export function Header() {
                 aria-current={isActive(link.href) ? "page" : undefined}
                 className={`rounded-md px-3 py-3 text-sm font-semibold ${
                   isActive(link.href)
-                    ? "bg-[var(--brand-soft)] text-[var(--brand)]"
-                    : "text-slate-800 hover:bg-[var(--brand-soft)]"
+                    ? "bg-[var(--accent-soft)] text-[var(--brand)]"
+                    : "text-slate-800 hover:bg-[var(--accent-soft)]"
                 }`}
                 onClick={() => setOpen(false)}
               >
@@ -93,9 +93,9 @@ export function Header() {
               <Link className="btn btn-secondary" href="/login" onClick={() => setOpen(false)}>
                 Login
               </Link>
-              {/* <Link className="btn btn-primary" href="/enroll" onClick={() => setOpen(false)}>
+              <Link className="btn btn-primary" href="/enroll" onClick={() => setOpen(false)}>
                 Apply Now
-              </Link> */}
+              </Link>
             </div>
           </nav>
         </div>

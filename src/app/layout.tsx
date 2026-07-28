@@ -13,6 +13,17 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.shortName}`,
   },
   description: siteConfig.description,
+  keywords: [
+    "DVR Global Careers",
+    "oil and gas training",
+    "offshore training",
+    "onshore training",
+    "warehouse logistics course",
+    "shipbuilding training",
+    "fire safety training",
+    "industrial skills training",
+    "placement assistance",
+  ],
   applicationName: siteConfig.name,
   alternates: { canonical: "/" },
   openGraph: {
@@ -22,15 +33,27 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     type: "website",
     locale: "en_IN",
+    images: [
+      {
+        url: siteConfig.logo,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} logo`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
+    images: [siteConfig.logo],
   },
   icons: {
-    icon: siteConfig.logoSmall,
-    apple: siteConfig.logoSmall,
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: siteConfig.logoSmall, type: "image/png" },
+    ],
+    apple: [{ url: siteConfig.logoSmall, type: "image/png" }],
   },
   robots: {
     index: true,

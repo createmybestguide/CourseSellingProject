@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { FaComments, FaCreditCard, FaDownload, FaFileSignature } from "react-icons/fa";
+import { FaComments, FaDownload, FaFileSignature } from "react-icons/fa";
 import { JsonLd } from "@/src/components/JsonLd";
-import { LeadForm } from "@/src/components/LeadForm";
 import { courses, getCourse } from "@/src/lib/courses";
 import { siteConfig } from "@/src/lib/site";
 
@@ -125,11 +124,7 @@ export default async function CoursePage({ params }: { params: RouteParams }) {
                 <Link className="btn btn-secondary" href={`/brochures/${course.slug}.pdf`}><FaDownload /> Download Brochure</Link>
                 <Link className="btn btn-secondary" href={`/contact?course=${course.slug}`}><FaComments /> Enquire Now</Link>
                 <Link className="btn btn-primary" href={`/enroll?course=${course.slug}`}><FaFileSignature /> Apply Now</Link>
-                {/* <Link className="btn btn-secondary" href={`/payment?course=${course.slug}`}><FaCreditCard /> Online Payment</Link> */}
               </div>
-            </div>
-            <div className="mt-6">
-              {/* <LeadForm mode="enroll" courseName={course.name} /> */}
             </div>
           </aside>
         </div>
