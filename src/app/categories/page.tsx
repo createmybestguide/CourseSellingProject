@@ -7,7 +7,7 @@ import { categories } from "@/src/lib/courses";
 
 export const metadata: Metadata = {
   title: "Course Categories",
-  description: "Explore expandable categories for marine, logistics, oil and gas, cruise, safety, and professional programs.",
+  description: "Explore DVR Global Career training categories for Oil & Gas, offshore and onshore projects, warehouse logistics, shipbuilding, manufacturing, and fire safety careers.",
   alternates: { canonical: "/categories" },
 };
 
@@ -15,7 +15,7 @@ export default function CategoriesPage() {
   return (
     <section className="section">
       <div className="container">
-        <SectionHeading eyebrow="Categories" title="Training categories structured for future growth" />
+        <SectionHeading eyebrow="Categories" title="Training categories for today's most demanding industries" />
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {categories.map((category) => (
             <Link href={`/categories/${category.slug}`} className="card group overflow-hidden" key={category.slug}>

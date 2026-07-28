@@ -6,7 +6,7 @@ import { JsonLd } from "@/src/components/JsonLd";
 import { LeadForm } from "@/src/components/LeadForm";
 import { SectionHeading } from "@/src/components/SectionHeading";
 import { categories, courses } from "@/src/lib/courses";
-import { faqs, galleryItems, recruiters, testimonials, whyChooseUs } from "@/src/lib/content";
+import { careerSections, faqs, founderProfile, galleryItems, industriesWeServe, recruiters, testimonials, whyChooseUs } from "@/src/lib/content";
 import { imageAssets, siteConfig } from "@/src/lib/site";
 
 export default function Home() {
@@ -36,17 +36,17 @@ export default function Home() {
         <div className="container relative grid min-h-[720px] content-between gap-10 pb-10 pt-20">
           <div className="mx-auto max-w-4xl text-center">
             <p className="text-xs font-black uppercase tracking-[0.22em] text-[var(--accent)] md:text-sm">
-              Admissions open for 2026 batches
+              Industry Skills. Global Careers.
             </p>
             <h1 className="mt-4 text-4xl font-black uppercase leading-[0.98] tracking-normal text-[var(--brand)] md:text-6xl lg:text-7xl">
-              Global Opportunities
-              <span className="block text-[var(--accent)]">Endless Possibilities</span>
+              Build Your Future
+              <span className="block text-[var(--accent)]">with DVR Global Career</span>
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-sm font-bold leading-6 text-slate-700 md:text-base">
-              Your gateway to exciting careers in oil &amp; gas, energy, marine, and beyond.
+              DVR Global Career is a leading career development and placement organization specializing in Oil &amp; Gas, Warehouse Management, Shipbuilding, and Industrial Skills Training. We prepare aspiring professionals with industry-focused training, internationally relevant skills, and dedicated placement support for careers in India and across the GCC and other global markets.
             </p>
             <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-              <Link href="/courses" className="btn btn-primary">Explore Courses</Link>
+              <Link href="/courses" className="btn btn-primary">Start Your Career</Link>
               <Link href="/enroll" className="btn bg-[var(--accent)] text-white shadow-lg shadow-orange-900/20 hover:bg-[#e96900]">Apply Now</Link>
             </div>
           </div>
@@ -56,18 +56,18 @@ export default function Home() {
               <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border-2 border-white/70 text-2xl">
                 <FaShip aria-hidden="true" />
               </span>
-              <h2 className="mt-4 text-lg font-black uppercase tracking-wide">Offshore Opportunities</h2>
+              <h2 className="mt-4 text-lg font-black uppercase tracking-wide">Offshore Training</h2>
               <p className="mx-auto mt-2 max-w-md text-sm font-semibold leading-6 text-blue-50">
-                Learn high-growth careers on offshore rigs, platforms, vessels, and marine operations.
+                Prepare for offshore and onshore oil and gas careers with practical safety awareness and workplace skills.
               </p>
             </div>
             <div className="rounded-lg border border-white/35 bg-[rgb(255_122_0_/_88%)] p-5 text-center text-white shadow-2xl shadow-orange-950/20 backdrop-blur">
               <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border-2 border-white/75 text-2xl">
                 <FaIndustry aria-hidden="true" />
               </span>
-              <h2 className="mt-4 text-lg font-black uppercase tracking-wide">Onshore Opportunities</h2>
+              <h2 className="mt-4 text-lg font-black uppercase tracking-wide">Onshore Training</h2>
               <p className="mx-auto mt-2 max-w-md text-sm font-semibold leading-6 text-orange-50">
-                Build a successful career in refineries, plants, terminals, logistics, and industrial safety.
+                Build technical confidence for refineries, petrochemical plants, power plants, construction projects, and industrial facilities.
               </p>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function Home() {
 
       <section className="section bg-white">
         <div className="container">
-          <SectionHeading eyebrow="Featured courses" title="Career programs built around real hiring pathways" text="Each course page includes eligibility, duration, fees, curriculum, certification, careers, placement support, brochure, enrollment, and payment actions." />
+          <SectionHeading eyebrow="Training programs" title="Offshore and onshore courses for global career pathways" text="Choose industry-oriented training designed for beginners, aspiring professionals, freshers, and experienced professionals preparing for India, GCC, and global market opportunities." />
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {courses.slice(0, 3).map((course) => <CourseCard key={course.slug} course={course} />)}
           </div>
@@ -89,16 +89,19 @@ export default function Home() {
             <Image className="object-cover" src={imageAssets.classroom} alt="Students attending professional training class" fill sizes="(min-width: 1024px) 48vw, 100vw" />
           </div>
           <div>
-            <p className="eyebrow">About institute</p>
-            <h2 className="mt-3 text-3xl font-bold text-slate-950 md:text-4xl">Structured training, transparent enrollment, and serious placement support</h2>
+            <p className="eyebrow">About DVR Global Career</p>
+            <h2 className="mt-3 text-3xl font-bold text-slate-950 md:text-4xl">Practical career-oriented training that bridges education and employment</h2>
             <p className="mt-5 leading-7 text-slate-600">
-              {siteConfig.shortName} combines classroom learning, practical readiness, documentation guidance, and recruiter preparation for candidates entering marine, logistics, cruise, safety, and industrial careers.
+              At {siteConfig.shortName} Global Career, we bridge the gap between education and employment by providing practical, career-oriented training that meets current industry standards. Our mission is to develop skilled professionals who are ready to excel in today&apos;s fast-growing industrial sectors.
+            </p>
+            <p className="mt-4 leading-7 text-slate-600">
+              With experienced trainers, hands-on learning, and a dedicated placement team, we help candidates build successful careers in high-demand industries.
             </p>
             <div className="mt-7 grid gap-4 sm:grid-cols-3">
               {[
-                [FaUserGraduate, "Student dashboard"],
-                [FaCertificate, "Certification details"],
-                [FaBriefcase, "Placement tracking"],
+                [FaUserGraduate, "Hands-on learning"],
+                [FaCertificate, "Certification support"],
+                [FaBriefcase, "Placement team"],
               ].map(([Icon, label]) => (
                 <div key={String(label)} className="card p-4">
                   <Icon className="text-2xl text-[var(--brand)]" />
@@ -112,7 +115,7 @@ export default function Home() {
 
       <section className="section bg-white">
         <div className="container">
-          <SectionHeading eyebrow="Why choose us" title="Designed for trust from first inquiry to final placement" />
+          <SectionHeading eyebrow="Why choose DVR Global Career?" title="Industry-focused support from training to career guidance" />
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {whyChooseUs.map((item) => (
               <div className="card flex gap-4 p-5" key={item}>
@@ -127,12 +130,12 @@ export default function Home() {
       <section className="section bg-[var(--brand-deep)] text-white">
         <div className="container grid gap-10 lg:grid-cols-[0.85fr_1fr]">
           <div>
-            <p className="eyebrow text-amber-300">Placement assistance</p>
-            <h2 className="mt-3 text-3xl font-bold md:text-4xl">Recruiter-ready support for eligible students</h2>
+            <p className="eyebrow text-amber-300">Placement Support</p>
+            <h2 className="mt-3 text-3xl font-bold md:text-4xl">Connect with job opportunities in high-demand industries</h2>
             <p className="mt-5 leading-7 text-slate-300">
-              Placement support includes candidate profiling, interview preparation, document review, lead tracking, and payment history visibility for administrators.
+              Our dedicated placement cell works closely with employers to connect qualified candidates with job opportunities in Oil &amp; Gas companies, EPC and engineering projects, shipyards, warehouse and logistics companies, manufacturing industries, and marine and offshore organizations. From training to interviews and documentation, we support candidates throughout their career journey.
             </p>
-            <Link href="/placements" className="btn btn-primary mt-7">View Placements</Link>
+            <Link href="/placements" className="btn btn-primary mt-7">Get Placement Assistance</Link>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {recruiters.map((name) => (
@@ -144,7 +147,7 @@ export default function Home() {
 
       <section className="section bg-white">
         <div className="container">
-          <SectionHeading eyebrow="Course categories" title="Easy to expand as new programs are added" />
+          <SectionHeading eyebrow="Industries we serve" title="Career training for today's most demanding industries" text="Whether you're a fresher or looking to upgrade your skills, DVR Global Career provides the knowledge, training, and placement support needed to build a rewarding career in today's most demanding industries." />
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {categories.map((category) => (
               <Link href={`/categories/${category.slug}`} className="card group overflow-hidden" key={category.slug}>
@@ -159,13 +162,57 @@ export default function Home() {
               </Link>
             ))}
           </div>
+          <div className="mt-8 flex flex-wrap gap-3">
+            {industriesWeServe.map((industry) => (
+              <span className="badge badge-muted" key={industry}>{industry}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-slate-50">
+        <div className="container grid gap-6 lg:grid-cols-3">
+          {careerSections.map((section) => (
+            <article className="card p-6" key={section.title}>
+              <span className="badge">{section.title}</span>
+              <h2 className="mt-4 text-2xl font-bold text-slate-950">{section.subtitle}</h2>
+              <p className="mt-4 text-sm leading-6 text-slate-600">{section.description}</p>
+              <h3 className="mt-6 text-sm font-black uppercase tracking-wide text-[var(--brand)]">Why choose us?</h3>
+              <ul className="mt-3 grid gap-2 text-sm font-semibold text-slate-700">
+                {section.reasons.map((reason) => <li key={reason}>{reason}</li>)}
+              </ul>
+              <h3 className="mt-6 text-sm font-black uppercase tracking-wide text-[var(--brand)]">Career opportunities</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">{section.careers.join(" • ")}</p>
+              <h3 className="mt-6 text-sm font-black uppercase tracking-wide text-[var(--brand)]">Eligibility</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">{section.eligibility}</p>
+              {section.note ? <p className="mt-3 text-xs font-semibold text-slate-500">{section.note}</p> : null}
+              {section.closing ? <p className="mt-5 text-sm font-black text-[var(--accent)]">{section.closing}</p> : null}
+              <Link className="btn btn-primary mt-6" href={section.href}>{section.cta}</Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section bg-white">
+        <div className="container grid gap-10 lg:grid-cols-[0.8fr_1fr] lg:items-center">
+          <div>
+            <p className="eyebrow">About the Founder & Managing Director</p>
+            <h2 className="mt-3 text-3xl font-bold text-slate-950 md:text-4xl">{founderProfile.name}</h2>
+            <p className="mt-3 text-sm font-black uppercase tracking-wide text-[var(--brand)]">{founderProfile.role}</p>
+          </div>
+          <div className="grid gap-4">
+            {founderProfile.paragraphs.map((paragraph) => (
+              <p className="leading-7 text-slate-600" key={paragraph}>{paragraph}</p>
+            ))}
+            <p className="text-lg font-black text-[var(--accent)]">&quot;{founderProfile.quote}&quot;</p>
+          </div>
         </div>
       </section>
 
       <section className="section bg-slate-50">
         <div className="container grid gap-10 lg:grid-cols-[1fr_0.8fr]">
           <div>
-            <SectionHeading eyebrow="Student reviews" title="Trusted by learners preparing for practical careers" />
+            <SectionHeading eyebrow="Student reviews" title="Learners preparing for practical industrial careers" />
             <div className="mt-10 grid gap-5">
               {testimonials.map((item) => (
                 <blockquote className="card p-6" key={item.name}>
@@ -181,13 +228,13 @@ export default function Home() {
 
       <section className="section bg-white">
         <div className="container">
-          <SectionHeading eyebrow="Gallery preview" title="Training sessions, events, videos, and practical workshops" />
+          <SectionHeading eyebrow="Gallery preview" title="Training sessions, placement preparation, and practical workshops" />
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {galleryItems.slice(0, 6).map((item, index) => (
               <div className="card p-5" key={item.title}>
                 <span className="badge badge-muted">{item.type}</span>
                 <h3 className="mt-5 text-lg font-bold text-slate-950">{item.title}</h3>
-                <p className="mt-3 text-sm text-slate-600">Media item #{index + 1} ready for CMS image or video upload.</p>
+                <p className="mt-3 text-sm text-slate-600">DVR Global Career training and career development activity.</p>
               </div>
             ))}
           </div>
@@ -198,10 +245,10 @@ export default function Home() {
         <div className="container grid gap-10 lg:grid-cols-[0.8fr_1fr]">
           <div>
             <p className="eyebrow">FAQs</p>
-            <h2 className="mt-3 text-3xl font-bold text-slate-950 md:text-4xl">Common admission questions</h2>
-            <p className="mt-5 leading-7 text-slate-600">FAQ schema is included for search engines and AI search surfaces.</p>
+            <h2 className="mt-3 text-3xl font-bold text-slate-950 md:text-4xl">Common training and placement questions</h2>
+            <p className="mt-5 leading-7 text-slate-600">Your Career Starts Here. Learn. Grow. Get Placed. Contact us today and take the first step toward a successful global career with DVR Global Career.</p>
             <Link className="btn btn-secondary mt-7" href="/courses">
-              <FaFileDownload /> Download Brochures
+              <FaFileDownload /> Download Brochure
             </Link>
           </div>
           <div className="grid gap-4">

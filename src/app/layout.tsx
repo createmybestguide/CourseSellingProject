@@ -9,7 +9,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Marine & Professional Training`,
+    default: `${siteConfig.name} | Oil & Gas, Warehouse, Shipbuilding & Industrial Skills Training`,
     template: `%s | ${siteConfig.shortName}`,
   },
   description: siteConfig.description,

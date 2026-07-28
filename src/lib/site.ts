@@ -3,7 +3,7 @@ export const siteConfig = {
   shortName: "DVR",
   url: "https://dvrglobalcareers.example.com",
   description:
-    "Professional oil and gas, marine, shipping, logistics, cruise, and industrial safety training with placement assistance.",
+    "DVR Global Career provides industry-focused Oil & Gas, Warehouse Management, Shipbuilding, and Industrial Skills Training with dedicated placement support for India, GCC, and global careers.",
   phone: "+91 98765 43210",
   whatsapp: "919876543210",
   email: "admissions@dvrglobalcareers.com",
@@ -35,6 +35,6 @@ export const imageAssets = {
     "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80",
   logistics:
     "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
-  cruise:
+  training:
     "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1200&q=80",
 };

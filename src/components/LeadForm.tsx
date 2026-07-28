@@ -33,39 +33,39 @@ export function LeadForm({ mode, courseName }: LeadFormProps) {
         </h2>
         <p className="mt-2 text-sm leading-6 text-slate-600">
           {isLogin
-            ? "Use this account structure for future authentication integration."
-            : "This production-ready form validates inputs and is ready to connect to CRM, email, and backend APIs."}
+            ? "Access your student account for training and enrollment updates."
+            : "Share your details and our team will guide you on training, admissions, and placement assistance."}
         </p>
       </div>
 
       {!isLogin ? (
         <label>
           Full name
-          <input name="name" autoComplete="name" required minLength={2} placeholder="Enter full name" />
+          <input name="name" autoComplete="name" required minLength={2} />
         </label>
       ) : null}
 
       <label>
         Email
-        <input name="email" type="email" autoComplete="email" required placeholder="you@example.com" />
+        <input name="email" type="email" autoComplete="email" required />
       </label>
 
       {isLogin ? (
         <label>
           Password
-          <input name="password" type="password" autoComplete="current-password" required minLength={8} placeholder="Minimum 8 characters" />
+          <input name="password" type="password" autoComplete="current-password" required minLength={8} />
         </label>
       ) : (
         <label>
           Phone
-          <input name="phone" type="tel" autoComplete="tel" required pattern="[0-9+\-\s]{8,15}" placeholder="+91 98765 43210" />
+          <input name="phone" type="tel" autoComplete="tel" required pattern="[0-9+\-\s]{8,15}" />
         </label>
       )}
 
       {!isLogin ? (
         <label>
           Course
-          <input name="course" required defaultValue={courseName ?? ""} placeholder="Preferred course" />
+          <input name="course" required defaultValue={courseName ?? ""} />
         </label>
       ) : null}
 
@@ -102,7 +102,7 @@ export function LeadForm({ mode, courseName }: LeadFormProps) {
       {mode !== "login" && mode !== "payment" ? (
         <label>
           Message
-          <textarea name="message" rows={4} placeholder="Tell us what you need" />
+          <textarea name="message" rows={4} />
         </label>
       ) : null}
 

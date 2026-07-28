@@ -6,17 +6,17 @@ import { imageAssets } from "@/src/lib/site";
 
 export const metadata: Metadata = {
   title: "Gallery",
-  description: "Image gallery, video gallery, event photos, and training session media.",
+  description: "View DVR Global Career training sessions, placement preparation, industrial skills workshops, event photos, and video highlights.",
   alternates: { canonical: "/gallery" },
 };
 
-const images = [imageAssets.ship, imageAssets.safety, imageAssets.logistics, imageAssets.cruise, imageAssets.classroom, imageAssets.hero];
+const images = [imageAssets.ship, imageAssets.safety, imageAssets.logistics, imageAssets.training, imageAssets.classroom, imageAssets.hero];
 
 export default function GalleryPage() {
   return (
     <section className="section">
       <div className="container">
-        <SectionHeading eyebrow="Gallery" title="Training sessions, event photos, and video highlights" text="Filter-ready gallery cards can be connected to a CMS or admin media manager." />
+        <SectionHeading eyebrow="Gallery" title="Training sessions, event photos, and video highlights" text="Explore DVR Global Career training and career development activities across Oil & Gas, Warehouse Management, Shipbuilding, Fire & Safety, and industrial skills programs." />
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {galleryItems.map((item, index) => (
             <article className="card overflow-hidden" key={item.title}>

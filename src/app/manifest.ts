@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "DVR Global Careers",
     short_name: "DVR",
-    description: "Oil and gas, marine, logistics, cruise, and industrial safety training institute.",
+    description: "Oil & Gas, Warehouse Management, Shipbuilding, Fire & Safety, and Industrial Skills Training with placement support.",
     start_url: "/",
     display: "standalone",
     background_color: "#f6f8fc",
