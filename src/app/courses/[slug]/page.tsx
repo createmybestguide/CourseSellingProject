@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { FaComments, FaDownload, FaFileSignature } from "react-icons/fa";
+import { FaFileSignature } from "react-icons/fa";
 import { JsonLd } from "@/src/components/JsonLd";
 import { courses, getCourse } from "@/src/lib/courses";
 import { siteConfig } from "@/src/lib/site";
@@ -53,7 +53,7 @@ export default async function CoursePage({ params }: { params: RouteParams }) {
     <>
       <JsonLd data={schema} />
       <section className="section pt-10">
-        <div className="container grid gap-10 lg:grid-cols-[1fr_0.42fr]">
+        <div className="container">
           <article>
             <span className="badge">{course.category}</span>
             <h1 className="mt-5 text-4xl font-black tracking-normal text-slate-950 md:text-5xl">{course.name}</h1>
@@ -113,20 +113,13 @@ export default async function CoursePage({ params }: { params: RouteParams }) {
               <div className="mt-5 flex flex-wrap gap-3">
                 {course.careers.map((career) => <span className="badge badge-muted" key={career}>{career}</span>)}
               </div>
+              <div className="mt-8 max-w-xl">
+                <Link className="btn btn-primary" href={`/enroll?course=${course.slug}`}>
+                  <FaFileSignature aria-hidden="true" /> Enroll Now
+                </Link>
+              </div>
             </section>
           </article>
-
-          <aside className="lg:sticky lg:top-24 lg:self-start">
-            <div className="card p-6">
-              <h2 className="text-xl font-bold text-slate-950">Start admission</h2>
-              <p className="mt-3 text-sm leading-6 text-slate-600">Download a brochure, enquire, apply, or continue to secure online payment.</p>
-              <div className="mt-6 grid gap-3">
-                <Link className="btn btn-secondary" href={`/brochures/${course.slug}.pdf`}><FaDownload /> Download Brochure</Link>
-                <Link className="btn btn-secondary" href={`/contact?course=${course.slug}`}><FaComments /> Enquire Now</Link>
-                <Link className="btn btn-primary" href={`/enroll?course=${course.slug}`}><FaFileSignature /> Apply Now</Link>
-              </div>
-            </div>
-          </aside>
         </div>
       </section>
     </>

@@ -1,3 +1,5 @@
+import { imageAssets } from "./site";
+
 export const stats = [
   { value: "3,000+", label: "candidates trained and placed" },
   { value: "15+", label: "years of industry experience" },
@@ -148,13 +150,61 @@ export const testimonials = [
 
 export const recruiters = placementIndustries;
 
+export const companyInfo = [
+  {
+    title: "Industry training with career intent",
+    text: "DVR Global Career focuses on practical Oil & Gas, warehouse, shipbuilding, and safety training for candidates preparing for India, GCC, and overseas roles.",
+  },
+  {
+    title: "Guidance from admission to placement",
+    text: "Candidates receive course guidance, workplace readiness, documentation support, resume preparation, and interview coaching from a dedicated placement team.",
+  },
+  {
+    title: "Built for freshers and working professionals",
+    text: "Programs are structured for freshers, ITI and diploma candidates, degree holders, and experienced professionals who want to upgrade industrial skills.",
+  },
+];
+
+export const placementStories = [
+  {
+    name: "Oil & Gas Trainee",
+    role: "Rigger / offshore support pathway",
+    info: "Completed practical lifting and safety modules, then received interview preparation and documentation guidance for project-site opportunities.",
+  },
+  {
+    name: "Warehouse Candidate",
+    role: "Warehouse associate pathway",
+    info: "Trained in inventory, store operations, and workplace discipline before placement support for logistics and warehouse roles.",
+  },
+  {
+    name: "Safety Trainee",
+    role: "Firewatch / holewatch pathway",
+    info: "Prepared for hot-work safety, confined-space monitoring, and emergency response responsibilities with role-focused guidance.",
+  },
+];
+
 export const galleryItems = [
-  { title: "Oil and gas practical training", type: "Training Sessions" },
-  { title: "Fire and safety learning", type: "Event Photos" },
-  { title: "Warehouse and logistics skills", type: "Training Sessions" },
-  { title: "Placement preparation", type: "Event Photos" },
-  { title: "Shipbuilding career guidance", type: "Video Gallery" },
-  { title: "Industrial safety training", type: "Video Gallery" },
+  { title: "Offshore Training", type: "Training Sessions", image: imageAssets.offshoreTraining },
+  { title: "Onshore Training", type: "Training Sessions", image: imageAssets.onshoreTraining },
+  { title: "Warehouse & Logistics", type: "Training Sessions", image: imageAssets.warehouseLogistics },
+  { title: "Shipbuilding Careers", type: "Training Sessions", image: imageAssets.shipbuildingCareers },
+  { title: "Fire & Safety Careers", type: "Training Sessions", image: imageAssets.fireSafetyCareers },
+  { title: "Practical Career-Oriented Training", type: "Training Sessions", image: imageAssets.practicalCareerTraining },
+  { title: "Rigging & Slinging", type: "Training Sessions", image: imageAssets.riggingSlinging },
+  { title: "Banksman Training", type: "Training Sessions", image: imageAssets.banksmanTraining },
+  { title: "Oil & Gas Field Training", type: "Training Sessions", image: imageAssets.oilGasFieldTraining },
+  { title: "Roustabout Training", type: "Training Sessions", image: imageAssets.roustaboutTraining },
+  { title: "BOSIET", type: "Safety Training", image: imageAssets.bosiet },
+  { title: "Offshore & Onshore Industry Training", type: "Training Sessions", image: imageAssets.offshoreOnshoreIndustryTraining },
+  { title: "HUET", type: "Safety Training", image: imageAssets.huet },
+  { title: "Mechanical Fitter", type: "Onshore Training", image: imageAssets.mechanicalFitter },
+  { title: "Pipe Fitter", type: "Onshore Training", image: imageAssets.pipeFitter },
+  { title: "General Fitter", type: "Onshore Training", image: imageAssets.generalFitter },
+  { title: "Instrument Technician", type: "Onshore Training", image: imageAssets.instrumentTechnician },
+  { title: "Electrical Technician", type: "Onshore Training", image: imageAssets.electricalTechnician },
+  { title: "Mechanical Technician", type: "Onshore Training", image: imageAssets.mechanicalTechnician },
+  { title: "Firewatch / Holewatch", type: "Safety Training", image: imageAssets.firewatchHolewatch },
+  { title: "Permit Receiver / Job Performer", type: "Safety Training", image: imageAssets.permitReceiverJobPerformerLeadWorker },
 ];
 
 export const adminModules = [

@@ -11,8 +11,8 @@ export const siteConfig = {
   city: "Navi Mumbai",
   region: "Maharashtra",
   postalCode: "400001",
-  logo: "/dvr-global-careers-logo.png",
-  logoSmall: "/dvr-global-careers-logo-small.png",
+  logo: "/dvr-logo-official.png",
+  logoSmall: "/dvr-logo-official.png",
 };
 
 export const navLinks = [
@@ -25,16 +25,31 @@ export const navLinks = [
 ];
 
 export const imageAssets = {
-  hero:
-    "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1800&q=80",
-  classroom:
-    "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80",
-  ship:
-    "https://images.unsplash.com/photo-1605745341112-85968b19335b?auto=format&fit=crop&w=1200&q=80",
-  safety:
-    "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80",
-  logistics:
-    "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
-  training:
-    "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1200&q=80",
+  hero: "/home-images/offshore-training.jpg",
+  classroom: "/home-images/practical-career-training.jpg",
+  ship: "/home-images/shipbuilding-careers.jpg",
+  safety: "/home-images/fire-safety-careers.jpg",
+  logistics: "/home-images/warehouse-logistics.jpg",
+  training: "/home-images/offshore-onshore-industry-training.jpg",
+  offshoreTraining: "/home-images/offshore-training.jpg",
+  onshoreTraining: "/home-images/onshore-training.jpg",
+  warehouseLogistics: "/home-images/warehouse-logistics.jpg",
+  shipbuildingCareers: "/home-images/shipbuilding-careers.jpg",
+  fireSafetyCareers: "/home-images/fire-safety-careers.jpg",
+  practicalCareerTraining: "/home-images/practical-career-training.jpg",
+  riggingSlinging: "/home-images/rigging-slinging.jpg",
+  banksmanTraining: "/home-images/banksman-training.jpg",
+  oilGasFieldTraining: "/home-images/oil-gas-field-training.jpg",
+  roustaboutTraining: "/home-images/roustabout-training.jpg",
+  offshoreOnshoreIndustryTraining: "/home-images/offshore-onshore-industry-training.jpg",
+  bosiet: "/home-images/bosiet.jpg",
+  huet: "/home-images/huet.jpg",
+  mechanicalFitter: "/home-images/mechanical-fitter.jpg",
+  pipeFitter: "/home-images/pipe-fitter.jpg",
+  generalFitter: "/home-images/general-fitter.jpg",
+  instrumentTechnician: "/home-images/instrument-technician.jpg",
+  electricalTechnician: "/home-images/electrical-technician.jpg",
+  mechanicalTechnician: "/home-images/mechanical-technician.jpg",
+  firewatchHolewatch: "/home-images/firewatch-holewatch.jpg",
+  permitReceiverJobPerformerLeadWorker: "/home-images/permit-receiver-job-performer-lead-worker.jpg",
 };

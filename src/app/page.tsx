@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaArrowRight, FaBriefcase, FaCertificate, FaCheckCircle, FaFileDownload, FaIndustry, FaShip, FaUserGraduate } from "react-icons/fa";
+import { FaArrowRight, FaBriefcase, FaCertificate, FaCheckCircle, FaIndustry, FaPhoneAlt, FaShip, FaUserGraduate } from "react-icons/fa";
+import { CountUpStats } from "@/src/components/CountUpStats";
 import { CourseCard } from "@/src/components/CourseCard";
 import { JsonLd } from "@/src/components/JsonLd";
 import { LeadForm } from "@/src/components/LeadForm";
 import { SectionHeading } from "@/src/components/SectionHeading";
-import { categories, courses } from "@/src/lib/courses";
-import { careerSections, faqs, founderProfile, galleryItems, industriesWeServe, recruiters, stats, testimonials, whyChooseUs } from "@/src/lib/content";
+import { categories, mainCourses } from "@/src/lib/courses";
+import { careerSections, companyInfo, faqs, founderProfile, industriesWeServe, placementStories, recruiters, stats, whyChooseUs } from "@/src/lib/content";
 import { imageAssets, siteConfig } from "@/src/lib/site";
 
 export default function Home() {
@@ -23,45 +24,49 @@ export default function Home() {
   return (
     <>
       <JsonLd data={faqSchema} />
-      <section className="hero-shell relative overflow-hidden bg-[var(--surface-warm)] text-[var(--brand-deep)]">
+      <section className="hero-shell relative overflow-hidden bg-[var(--brand-deep)] text-white">
+        <video
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={imageAssets.ship}
+          aria-label="Marine worker training background video"
+        >
+          <source src="https://videos.pexels.com/video-files/1249414/1249414-hd_1920_1080_25fps.mp4" type="video/mp4" />
+        </video>
         <Image
-          className="object-cover object-center"
-          src={imageAssets.hero}
+          className="object-cover object-center opacity-0"
+          src={imageAssets.ship}
           alt="Offshore oil platform and industrial energy career background"
           fill
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgb(255_248_239_/_94%),rgb(255_253_250_/_80%)_44%,rgb(255_138_29_/_26%)),linear-gradient(0deg,rgb(7_25_47_/_34%),rgb(255_248_239_/_18%)_58%,rgb(255_248_239_/_82%))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgb(2_8_38_/_94%),rgb(2_8_38_/_78%)_48%,rgb(0_124_255_/_34%)),linear-gradient(0deg,rgb(2_8_38_/_74%),rgb(2_8_38_/_18%)_58%,rgb(2_8_38_/_72%))]" />
         <div className="container relative z-10 grid min-h-[calc(100svh-5rem)] content-center gap-8 py-10 md:min-h-[720px] md:py-14">
           <div className="hero-panel mx-auto max-w-4xl text-center">
-            <p className="mx-auto inline-flex rounded-full bg-white/85 px-4 py-2 text-xs font-black uppercase text-[var(--accent)] shadow-sm ring-1 ring-[rgb(255_138_29_/_20%)] md:text-sm">
+            <p className="mx-auto inline-flex rounded-full bg-white/10 px-4 py-2 text-xs font-black uppercase text-[var(--brand-sky)] shadow-sm ring-1 ring-white/15 md:text-sm">
               Industry Skills. Global Careers.
             </p>
-            <h1 className="mt-4 text-4xl font-black uppercase leading-[1.02] tracking-normal text-[var(--brand)] md:text-6xl lg:text-7xl">
+            <h1 className="mt-4 text-4xl font-black uppercase leading-[1.02] tracking-normal text-white md:text-6xl lg:text-7xl">
               Build Your Future
-              <span className="block text-[var(--accent)]">with DVR Global Career</span>
+              <span className="block text-[var(--brand-sky)]">with DVR Global Career</span>
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-sm font-bold leading-6 text-slate-700 md:text-base">
+            <p className="mx-auto mt-4 max-w-2xl text-sm font-bold leading-6 text-blue-50 md:text-base">
               DVR Global Career is a leading career development and placement organization specializing in Oil &amp; Gas, Warehouse Management, Shipbuilding, and Industrial Skills Training. We prepare aspiring professionals with industry-focused training, internationally relevant skills, and dedicated placement support for careers in India and across the GCC and other global markets.
             </p>
-            <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+            <div className="mx-auto mt-7 grid max-w-md gap-3 sm:grid-cols-2">
               <Link href="/courses" className="btn btn-primary">Start Your Career</Link>
               <Link href="/enroll" className="btn btn-accent">Apply Now</Link>
             </div>
           </div>
 
-          <div className="stagger grid gap-4 md:grid-cols-4">
-            {stats.map((item) => (
-              <div className="stat-tile rounded-lg p-4 text-center" key={item.label}>
-                <strong className="block text-2xl font-black text-[var(--brand)] md:text-3xl">{item.value}</strong>
-                <span className="mt-1 block text-xs font-bold uppercase text-slate-600">{item.label}</span>
-              </div>
-            ))}
-          </div>
+          <CountUpStats stats={stats} className="stagger grid gap-4 md:grid-cols-4" />
 
           <div className="grid gap-4 md:grid-cols-2">
-            <div className="hero-highlight-card rounded-lg border border-white/35 bg-[rgb(7_75_143_/_88%)] p-5 text-center text-white shadow-2xl shadow-slate-950/20 backdrop-blur">
+            <div className="hero-highlight-card h-full rounded-lg border border-white/35 bg-[rgb(0_89_199_/_88%)] p-5 text-center text-white shadow-2xl shadow-slate-950/20 backdrop-blur">
               <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border-2 border-white/70 text-2xl">
                 <FaShip aria-hidden="true" />
               </span>
@@ -70,7 +75,7 @@ export default function Home() {
                 Prepare for offshore and onshore oil and gas careers with practical safety awareness and workplace skills.
               </p>
             </div>
-            <div className="hero-highlight-card rounded-lg border border-white/35 bg-[rgb(255_138_29_/_90%)] p-5 text-center text-white shadow-2xl shadow-orange-950/20 backdrop-blur">
+            <div className="hero-highlight-card h-full rounded-lg border border-white/35 bg-[rgb(255_143_0_/_90%)] p-5 text-center text-white shadow-2xl shadow-orange-950/20 backdrop-blur">
               <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border-2 border-white/75 text-2xl">
                 <FaIndustry aria-hidden="true" />
               </span>
@@ -85,16 +90,19 @@ export default function Home() {
 
       <section className="section bg-[var(--surface)]">
         <div className="container reveal">
-          <SectionHeading eyebrow="Training programs" title="Offshore and onshore courses for global career pathways" text="Choose industry-oriented training designed for beginners, aspiring professionals, freshers, and experienced professionals preparing for India, GCC, and global market opportunities." />
+          <SectionHeading eyebrow="Main courses" title="5 core courses for global career pathways" text="Choose industry-oriented training designed for beginners, aspiring professionals, freshers, and experienced professionals preparing for India, GCC, and global market opportunities." />
           <div className="stagger mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {courses.slice(0, 3).map((course) => <CourseCard key={course.slug} course={course} />)}
+            {mainCourses.slice(0, 3).map((course) => <CourseCard key={course.slug} course={course} />)}
+          </div>
+          <div className="mt-10 text-center">
+            <Link href="/courses" className="btn btn-accent px-8 py-4 text-base">View Main Courses</Link>
           </div>
         </div>
       </section>
 
       <section className="section section-soft">
         <div className="container reveal grid gap-10 lg:grid-cols-[0.95fr_1fr] lg:items-center">
-          <div className="image-tilt relative aspect-[4/3] w-full overflow-hidden rounded-lg shadow-xl">
+          <div className="image-straight relative aspect-[4/3] w-full overflow-hidden rounded-lg shadow-xl">
             <Image className="object-cover" src={imageAssets.classroom} alt="Students attending professional training class" fill sizes="(min-width: 1024px) 48vw, 100vw" />
           </div>
           <div>
@@ -124,10 +132,10 @@ export default function Home() {
 
       <section className="section section-cool">
         <div className="container reveal">
-          <SectionHeading eyebrow="Why choose DVR Global Career?" title="Industry-focused support from training to career guidance" />
-          <div className="stagger mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <SectionHeading eyebrow="Top selling features" title="Industry-focused support from training to career guidance" />
+          <div className="stagger mt-10 grid items-stretch gap-4 md:grid-cols-2 lg:grid-cols-4">
             {whyChooseUs.map((item) => (
-              <div className="card flex gap-4 p-5" key={item}>
+              <div className="card flex h-full gap-4 p-5" key={item}>
                 <FaCheckCircle className="mt-1 shrink-0 text-emerald-600" />
                 <p className="text-sm font-semibold leading-6 text-slate-700">{item}</p>
               </div>
@@ -156,16 +164,16 @@ export default function Home() {
 
       <section className="section bg-[var(--surface)]">
         <div className="container reveal">
-          <SectionHeading eyebrow="Industries we serve" title="Career training for today's most demanding industries" text="Whether you're a fresher or looking to upgrade your skills, DVR Global Career provides the knowledge, training, and placement support needed to build a rewarding career in today's most demanding industries." />
-          <div className="stagger mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <SectionHeading eyebrow="Course categories" title="Career training for today's most demanding industries" text="Whether you're a fresher or looking to upgrade your skills, DVR Global Career provides the knowledge, training, and placement support needed to build a rewarding career in today's most demanding industries." />
+          <div className="stagger mt-10 grid items-stretch gap-5 md:grid-cols-2 lg:grid-cols-3">
             {categories.map((category) => (
-              <Link href={`/categories/${category.slug}`} className="card group overflow-hidden" key={category.slug}>
+              <Link href={`/categories/${category.slug}`} className="card group flex h-full flex-col overflow-hidden" key={category.slug}>
                 <div className="relative h-44 w-full">
                   <Image className="object-cover transition duration-500 group-hover:scale-105" src={category.image} alt={`${category.name} category`} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
                 </div>
-                <div className="p-5">
+                <div className="flex flex-1 flex-col p-5">
                   <h3 className="text-lg font-bold text-slate-950">{category.name}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">{category.description}</p>
+                  <p className="mt-2 flex-1 text-sm leading-6 text-slate-600">{category.description}</p>
                   <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[var(--brand)]">Browse <FaArrowRight /></span>
                 </div>
               </Link>
@@ -184,7 +192,7 @@ export default function Home() {
       <section className="section section-soft">
         <div className="container stagger grid gap-6 lg:grid-cols-3">
           {careerSections.map((section) => (
-            <article className="card p-6" key={section.title}>
+            <article className="card flex h-full flex-col p-6" key={section.title}>
               <span className="badge">{section.title}</span>
               <h2 className="mt-4 text-2xl font-bold text-slate-950">{section.subtitle}</h2>
               <p className="mt-4 text-sm leading-6 text-slate-600">{section.description}</p>
@@ -193,12 +201,12 @@ export default function Home() {
                 {section.reasons.map((reason) => <li key={reason}>{reason}</li>)}
               </ul>
               <h3 className="mt-6 text-sm font-black uppercase tracking-wide text-[var(--brand)]">Career opportunities</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-600">{section.careers.join(" • ")}</p>
+              <p className="mt-3 text-sm leading-6 text-slate-600">{section.careers.join(" | ")}</p>
               <h3 className="mt-6 text-sm font-black uppercase tracking-wide text-[var(--brand)]">Eligibility</h3>
               <p className="mt-3 text-sm leading-6 text-slate-600">{section.eligibility}</p>
               {section.note ? <p className="mt-3 text-xs font-semibold text-slate-500">{section.note}</p> : null}
               {section.closing ? <p className="mt-5 text-sm font-black text-[var(--accent)]">{section.closing}</p> : null}
-              <Link className="btn btn-primary mt-6" href={section.href}>{section.cta}</Link>
+              <Link className="btn btn-primary mt-auto" href={section.href}>{section.cta}</Link>
             </article>
           ))}
         </div>
@@ -221,15 +229,15 @@ export default function Home() {
       </section>
 
       <section className="section section-soft">
-        <div className="container reveal grid gap-10 lg:grid-cols-[1fr_0.8fr]">
-          <div>
-            <SectionHeading eyebrow="Student reviews" title="Learners preparing for practical industrial careers" />
-            <div className="stagger mt-10 grid gap-5">
-              {testimonials.map((item) => (
-                <blockquote className="card p-6" key={item.name}>
-                  <p className="leading-7 text-slate-700">&quot;{item.quote}&quot;</p>
-                  <footer className="mt-4 text-sm font-bold text-slate-950">{item.name} - {item.role}</footer>
-                </blockquote>
+        <div className="about-form-grid container reveal grid items-stretch gap-10 lg:grid-cols-[1fr_0.8fr]">
+          <div className="flex h-full flex-col">
+            <SectionHeading eyebrow="About us" title="Company information and career support" />
+            <div className="stagger mt-10 grid flex-1 gap-5">
+              {companyInfo.map((item) => (
+                <article className="card p-6" key={item.title}>
+                  <h3 className="text-lg font-bold text-slate-950">{item.title}</h3>
+                  <p className="mt-3 leading-7 text-slate-700">{item.text}</p>
+                </article>
               ))}
             </div>
           </div>
@@ -239,14 +247,14 @@ export default function Home() {
 
       <section className="section bg-[var(--surface)]">
         <div className="container reveal">
-          <SectionHeading eyebrow="Gallery preview" title="Training sessions, placement preparation, and practical workshops" />
-          <div className="stagger mt-10 grid gap-4 md:grid-cols-3">
-            {galleryItems.slice(0, 6).map((item) => (
-              <div className="card p-5" key={item.title}>
-                <span className="badge badge-muted">{item.type}</span>
-                <h3 className="mt-5 text-lg font-bold text-slate-950">{item.title}</h3>
-                <p className="mt-3 text-sm text-slate-600">DVR Global Career training and career development activity.</p>
-              </div>
+          <SectionHeading eyebrow="Placements" title="Candidate pathways supported by DVR Global Career" text="Placement support shares practical information about candidates, training focus, and the role pathways they prepare for after completing core programs." />
+          <div className="stagger mt-10 grid gap-5 md:grid-cols-3">
+            {placementStories.map((item) => (
+              <article className="card p-6" key={item.name}>
+                <span className="badge">{item.role}</span>
+                <h3 className="mt-5 text-xl font-bold text-slate-950">{item.name}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{item.info}</p>
+              </article>
             ))}
           </div>
         </div>
@@ -258,8 +266,8 @@ export default function Home() {
             <p className="eyebrow">FAQs</p>
             <h2 className="mt-3 text-3xl font-bold text-slate-950 md:text-4xl">Common training and placement questions</h2>
             <p className="mt-5 leading-7 text-slate-600">Your Career Starts Here. Learn. Grow. Get Placed. Contact us today and take the first step toward a successful global career with DVR Global Career.</p>
-            <Link className="btn btn-secondary mt-7" href="/courses">
-              <FaFileDownload /> Download Brochure
+            <Link className="btn btn-secondary mt-7" href="/contact">
+              <FaPhoneAlt /> Contact Us
             </Link>
           </div>
           <div className="stagger grid gap-4">

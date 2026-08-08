@@ -33,7 +33,7 @@ export default async function CategoryPage({ params }: { params: RouteParams }) 
     <section className="section">
       <div className="container">
         <SectionHeading eyebrow="Category" title={category.name} text={category.description} />
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
           {categoryCourses.length > 0 ? (
             categoryCourses.map((course) => <CourseCard key={course.slug} course={course} />)
           ) : (

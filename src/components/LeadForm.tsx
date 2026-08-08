@@ -26,7 +26,7 @@ export function LeadForm({ mode, courseName }: LeadFormProps) {
   const isPayment = mode === "payment";
 
   return (
-    <form className="form-panel" onSubmit={submit} noValidate>
+    <form className={`form-panel form-panel-${mode}`} onSubmit={submit} noValidate>
       <div>
         <h2 className="text-2xl font-bold text-slate-950">
           {isLogin ? "Student Login" : isPayment ? "Secure Payment Request" : "Send Your Details"}

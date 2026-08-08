@@ -16,15 +16,15 @@ export default function CategoriesPage() {
     <section className="section">
       <div className="container">
         <SectionHeading eyebrow="Categories" title="Training categories for today's most demanding industries" />
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
           {categories.map((category) => (
-            <Link href={`/categories/${category.slug}`} className="card group overflow-hidden" key={category.slug}>
+            <Link href={`/categories/${category.slug}`} className="card group flex h-full flex-col overflow-hidden" key={category.slug}>
               <div className="relative h-48 w-full">
                 <Image className="object-cover" src={category.image} alt={`${category.name} training category`} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
               </div>
-              <div className="p-6">
+              <div className="flex flex-1 flex-col p-6">
                 <h2 className="text-xl font-bold text-slate-950">{category.name}</h2>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{category.description}</p>
+                <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">{category.description}</p>
                 <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[var(--brand)]">View programs <FaArrowRight /></span>
               </div>
             </Link>

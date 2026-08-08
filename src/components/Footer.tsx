@@ -6,16 +6,16 @@ import { navLinks, siteConfig } from "@/src/lib/site";
 
 export function Footer() {
   return (
-    <footer className="bg-[linear-gradient(135deg,var(--brand-deep),#082f57)] text-white">
+    <footer className="bg-[linear-gradient(135deg,var(--brand-deep),#00306f_58%,#0059c7)] text-white">
       <div className="container grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
         <div>
-          <Link href="/" className="relative block h-16 w-40 overflow-hidden rounded-md bg-white shadow-lg shadow-slate-950/20" aria-label={`${siteConfig.name} home`}>
+          <Link href="/" className="relative block h-20 w-20 overflow-hidden rounded-md bg-[var(--brand-deep)] shadow-lg shadow-slate-950/20 ring-1 ring-white/15" aria-label={`${siteConfig.name} home`}>
             <Image
               src={siteConfig.logo}
               alt={`${siteConfig.name} logo`}
-              width={180}
-              height={72}
-              sizes="160px"
+              width={112}
+              height={112}
+              sizes="80px"
               className="h-full w-full object-contain"
             />
           </Link>

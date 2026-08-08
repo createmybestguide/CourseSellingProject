@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaArrowRight, FaClock, FaRupeeSign } from "react-icons/fa";
+import { FaArrowRight, FaClock, FaFileSignature, FaRupeeSign } from "react-icons/fa";
 import type { Course } from "@/src/lib/courses";
 
 export function CourseCard({ course }: { course: Course }) {
   return (
-    <article className="card group overflow-hidden">
+    <article className="card group flex h-full flex-col overflow-hidden">
       <div className="course-media relative h-48 w-full overflow-hidden">
         <Image
           className="object-cover transition duration-500 group-hover:scale-105"
@@ -19,13 +19,13 @@ export function CourseCard({ course }: { course: Course }) {
           Career-ready
         </span>
       </div>
-      <div className="p-6">
+      <div className="flex flex-1 flex-col p-6">
         <div className="flex flex-wrap gap-2">
           <span className="badge">{course.category}</span>
           <span className="badge badge-success">{course.level}</span>
         </div>
-        <h3 className="mt-4 text-xl font-bold text-slate-950">{course.name}</h3>
-        <p className="mt-3 text-sm leading-6 text-slate-600">{course.summary}</p>
+        <h3 className="course-title mt-4 text-xl font-bold text-slate-950">{course.name}</h3>
+        <p className="course-summary mt-3 text-sm leading-6 text-slate-600">{course.summary}</p>
         <div className="mt-5 grid gap-2 text-sm font-semibold text-slate-700">
           <span className="flex items-center gap-2">
             <FaClock className="text-[var(--accent)]" /> {course.duration}
@@ -34,12 +34,17 @@ export function CourseCard({ course }: { course: Course }) {
             <FaRupeeSign className="text-[var(--accent)]" /> {course.fees.replace("₹", "")}
           </span>
         </div>
-        <Link
-          className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[var(--brand)] transition-all group-hover:gap-3 group-hover:text-[var(--accent)]"
-          href={`/courses/${course.slug}`}
-        >
-          View course <FaArrowRight aria-hidden="true" />
-        </Link>
+        <div className="mt-auto grid gap-3 pt-6 sm:grid-cols-[1fr_auto]">
+          <Link className="btn btn-primary w-full" href={`/enroll?course=${course.slug}`}>
+            <FaFileSignature aria-hidden="true" /> Enroll Now
+          </Link>
+          <Link
+            className="inline-flex min-h-11 items-center justify-center gap-2 text-sm font-bold text-[var(--brand)] transition-all group-hover:gap-3 group-hover:text-[var(--accent)]"
+            href={`/courses/${course.slug}`}
+          >
+            Details <FaArrowRight aria-hidden="true" />
+          </Link>
+        </div>
       </div>
     </article>
   );
