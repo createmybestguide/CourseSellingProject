@@ -5,6 +5,7 @@ import { siteConfig } from "@/src/lib/site";
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
+    "/about",
     "/courses",
     "/categories",
     "/contact",

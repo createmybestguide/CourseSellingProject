@@ -1,7 +1,8 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle, FaExclamationCircle } from "react-icons/fa";
+import { courses } from "@/src/lib/courses";
 
 type LeadFormProps = {
   mode: "contact" | "enroll" | "callback" | "login" | "register" | "payment";
@@ -10,16 +11,49 @@ type LeadFormProps = {
 
 export function LeadForm({ mode, courseName }: LeadFormProps) {
   const [status, setStatus] = useState("");
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
-  function submit(event: FormEvent<HTMLFormElement>) {
+  async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
-    setStatus("Submitted successfully. Our team will contact you shortly.");
-    form.reset();
+
+    if (mode === "login") {
+      setError("");
+      setStatus("Login request received.");
+      return;
+    }
+
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    setSubmitting(true);
+    setStatus("");
+    setError("");
+
+    try {
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...payload, mode }),
+      });
+      const result = (await response.json()) as { message?: string };
+
+      if (!response.ok) {
+        throw new Error(result.message ?? "Unable to submit right now.");
+      }
+
+      setStatus("Submitted successfully. Our team will contact you shortly.");
+      form.reset();
+    } catch (submitError) {
+      setError(submitError instanceof Error ? submitError.message : "Unable to submit right now.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   const isLogin = mode === "login";
@@ -65,7 +99,14 @@ export function LeadForm({ mode, courseName }: LeadFormProps) {
       {!isLogin ? (
         <label>
           Course
-          <input name="course" required defaultValue={courseName ?? ""} />
+          <select name="course" required defaultValue={courseName ?? ""}>
+            <option value="" disabled>Select course</option>
+            {courses.map((course) => (
+              <option value={course.name} key={course.slug}>
+                {course.name}
+              </option>
+            ))}
+          </select>
         </label>
       ) : null}
 
@@ -106,13 +147,19 @@ export function LeadForm({ mode, courseName }: LeadFormProps) {
         </label>
       ) : null}
 
-      <button className="btn btn-primary w-full" type="submit">
-        {isLogin ? "Login" : isPayment ? "Generate Payment Link" : "Submit"}
+      <button className="btn btn-primary w-full" type="submit" disabled={submitting}>
+        {submitting ? "Submitting..." : isLogin ? "Login" : isPayment ? "Generate Payment Link" : "Submit"}
       </button>
 
       {status ? (
         <p className="flex items-center gap-2 rounded-md bg-emerald-50 p-3 text-sm font-semibold text-emerald-700" role="status">
           <FaCheckCircle /> {status}
+        </p>
+      ) : null}
+
+      {error ? (
+        <p className="flex items-center gap-2 rounded-md bg-red-50 p-3 text-sm font-semibold text-red-700" role="alert">
+          <FaExclamationCircle /> {error}
         </p>
       ) : null}
     </form>

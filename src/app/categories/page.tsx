@@ -12,12 +12,18 @@ export const metadata: Metadata = {
 };
 
 export default function CategoriesPage() {
+  const orderedCategories = [
+    ...categories.filter((category) => category.slug === "onshore-training"),
+    ...categories.filter((category) => category.slug === "offshore-training"),
+    ...categories.filter((category) => !["onshore-training", "offshore-training"].includes(category.slug)),
+  ];
+
   return (
     <section className="section">
       <div className="container">
         <SectionHeading eyebrow="Categories" title="Training categories for today's most demanding industries" />
         <div className="mt-12 grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category) => (
+          {orderedCategories.map((category) => (
             <Link href={`/categories/${category.slug}`} className="card group flex h-full flex-col overflow-hidden" key={category.slug}>
               <div className="relative h-48 w-full">
                 <Image className="object-cover" src={category.image} alt={`${category.name} training category`} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />

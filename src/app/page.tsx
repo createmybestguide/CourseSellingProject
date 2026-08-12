@@ -1,13 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FaArrowRight, FaBriefcase, FaCertificate, FaCheckCircle, FaIndustry, FaPhoneAlt, FaShip, FaUserGraduate } from "react-icons/fa";
-import { CountUpStats } from "@/src/components/CountUpStats";
 import { CourseCard } from "@/src/components/CourseCard";
 import { JsonLd } from "@/src/components/JsonLd";
 import { LeadForm } from "@/src/components/LeadForm";
 import { SectionHeading } from "@/src/components/SectionHeading";
 import { categories, mainCourses } from "@/src/lib/courses";
-import { careerSections, companyInfo, faqs, founderProfile, industriesWeServe, placementStories, recruiters, stats, whyChooseUs } from "@/src/lib/content";
+import { careerSections, companyInfo, faqs, founderProfile, industriesWeServe, placementStories, recruiters, whyChooseUs } from "@/src/lib/content";
 import { imageAssets, siteConfig } from "@/src/lib/site";
 
 export default function Home() {
@@ -25,37 +24,26 @@ export default function Home() {
     <>
       <JsonLd data={faqSchema} />
       <section className="hero-shell relative overflow-hidden bg-[var(--brand-deep)] text-white">
-        <video
-          className="absolute inset-0 h-full w-full object-cover object-center"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={imageAssets.ship}
-          aria-label="Marine worker training background video"
-        >
-          <source src="https://videos.pexels.com/video-files/1249414/1249414-hd_1920_1080_25fps.mp4" type="video/mp4" />
-        </video>
         <Image
-          className="object-cover object-center opacity-0"
-          src={imageAssets.ship}
+          className="object-cover object-center"
+          src={imageAssets.hero}
           alt="Offshore oil platform and industrial energy career background"
           fill
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgb(2_8_38_/_94%),rgb(2_8_38_/_78%)_48%,rgb(0_124_255_/_34%)),linear-gradient(0deg,rgb(2_8_38_/_74%),rgb(2_8_38_/_18%)_58%,rgb(2_8_38_/_72%))]" />
-        <div className="container relative z-10 grid min-h-[calc(100svh-5rem)] content-center gap-8 py-10 md:min-h-[720px] md:py-14">
-          <div className="hero-panel mx-auto max-w-4xl text-center">
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgb(2_8_38_/_78%),rgb(2_8_38_/_48%)_46%,rgb(0_50_92_/_20%)),linear-gradient(0deg,rgb(2_8_38_/_70%),rgb(2_8_38_/_18%)_56%,rgb(2_8_38_/_46%))]" />
+        <div className="container relative z-10 grid min-h-[calc(100svh-5rem)] content-center gap-7 py-10 md:min-h-[720px] md:py-14">
+          <div className="hero-panel mx-auto -mt-6 max-w-4xl text-center md:-mt-10">
             <p className="mx-auto inline-flex rounded-full bg-white/10 px-4 py-2 text-xs font-black uppercase text-[var(--brand-sky)] shadow-sm ring-1 ring-white/15 md:text-sm">
               Industry Skills. Global Careers.
             </p>
-            <h1 className="mt-4 text-4xl font-black uppercase leading-[1.02] tracking-normal text-white md:text-6xl lg:text-7xl">
-              Build Your Future
-              <span className="block text-[var(--brand-sky)]">with DVR Global Career</span>
-            </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-sm font-bold leading-6 text-blue-50 md:text-base">
-              DVR Global Career is a leading career development and placement organization specializing in Oil &amp; Gas, Warehouse Management, Shipbuilding, and Industrial Skills Training. We prepare aspiring professionals with industry-focused training, internationally relevant skills, and dedicated placement support for careers in India and across the GCC and other global markets.
+            <h3 className="mt-4 text-xl font-bold uppercase leading-[1.08] tracking-normal text-white md:text-3xl lg:text-5xl">
+              Global Opportunities
+              <span className="block text-[var(--brand-sky)]">Endless Possibilities</span>
+            </h3>
+            <p className="mx-auto mt-4 max-w-2xl text-sm font-semibold leading-6 text-blue-50 md:text-base">
+              Your Gateway to Exciting Careers in Oil &amp; Gas, Energy, and Beyond.
             </p>
             <div className="mx-auto mt-7 grid max-w-md gap-3 sm:grid-cols-2">
               <Link href="/courses" className="btn btn-primary">Start Your Career</Link>
@@ -63,25 +51,23 @@ export default function Home() {
             </div>
           </div>
 
-          <CountUpStats stats={stats} className="stagger grid gap-4 md:grid-cols-4" />
-
-          <div className="grid gap-4 md:grid-cols-2">
-            <div className="hero-highlight-card h-full rounded-lg border border-white/35 bg-[rgb(0_89_199_/_88%)] p-5 text-center text-white shadow-2xl shadow-slate-950/20 backdrop-blur">
-              <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border-2 border-white/70 text-2xl">
-                <FaShip aria-hidden="true" />
-              </span>
-              <h2 className="mt-4 text-lg font-black uppercase tracking-wide">Offshore Training</h2>
-              <p className="mx-auto mt-2 max-w-md text-sm font-semibold leading-6 text-blue-50">
-                Prepare for offshore and onshore oil and gas careers with practical safety awareness and workplace skills.
-              </p>
-            </div>
-            <div className="hero-highlight-card h-full rounded-lg border border-white/35 bg-[rgb(255_143_0_/_90%)] p-5 text-center text-white shadow-2xl shadow-orange-950/20 backdrop-blur">
+          <div className="mt-12 grid gap-6 md:mt-18 md:grid-cols-2 md:gap-7">
+            <div className="hero-highlight-card h-full rounded-lg border border-white/25 bg-[rgb(255_143_0_/_36%)] p-5 text-center text-white shadow-2xl shadow-orange-950/20 backdrop-blur-lg">
               <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border-2 border-white/75 text-2xl">
                 <FaIndustry aria-hidden="true" />
               </span>
-              <h2 className="mt-4 text-lg font-black uppercase tracking-wide">Onshore Training</h2>
-              <p className="mx-auto mt-2 max-w-md text-sm font-semibold leading-6 text-orange-50">
-                Build technical confidence for refineries, petrochemical plants, power plants, construction projects, and industrial facilities.
+              <h2 className="mt-4 text-base font-extrabold uppercase tracking-wide">Onshore Opportunities</h2>
+              <p className="mx-auto mt-2 max-w-md text-sm font-medium leading-6 text-orange-50">
+                Build a successful career in onshore plants and refineries with global leaders.
+              </p>
+            </div>
+            <div className="hero-highlight-card h-full rounded-lg border border-white/25 bg-[rgb(0_89_199_/_36%)] p-5 text-center text-white shadow-2xl shadow-slate-950/20 backdrop-blur-lg">
+              <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border-2 border-white/70 text-2xl">
+                <FaShip aria-hidden="true" />
+              </span>
+              <h2 className="mt-4 text-base font-extrabold uppercase tracking-wide">Offshore Opportunities</h2>
+              <p className="mx-auto mt-2 max-w-md text-sm font-medium leading-6 text-blue-50">
+                Explore high-growth careers on offshore rigs and offshore facilities worldwide.
               </p>
             </div>
           </div>
@@ -283,4 +269,3 @@ export default function Home() {
     </>
   );
 }
-

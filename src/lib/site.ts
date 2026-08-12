@@ -16,7 +16,8 @@ export const siteConfig = {
 };
 
 export const navLinks = [
-  { label: "Courses", href: "/courses" },
+  { label: "About", href: "/about" },
+  // { label: "Courses", href: "/courses" },
   { label: "Categories", href: "/categories" },
   { label: "Placements", href: "/placements" },
   { label: "Gallery", href: "/gallery" },
@@ -25,7 +26,7 @@ export const navLinks = [
 ];
 
 export const imageAssets = {
-  hero: "/home-images/offshore-training.jpg",
+  hero: "/home-images/dvr-front-page-sunset-hero.png",
   classroom: "/home-images/practical-career-training.jpg",
   ship: "/home-images/shipbuilding-careers.jpg",
   safety: "/home-images/fire-safety-careers.jpg",
@@ -34,8 +35,20 @@ export const imageAssets = {
   offshoreTraining: "/home-images/offshore-training.jpg",
   onshoreTraining: "/home-images/onshore-training.jpg",
   warehouseLogistics: "/home-images/warehouse-logistics.jpg",
+  warehouseOperationsInventoryManagement: "/home-images/warehouse-operations-inventory-management.png",
+  warehouseMaterialHandlingLogistics: "/home-images/warehouse-material-handling-logistics.png",
+  warehouseStockLogisticsCoordination: "/home-images/warehouse-stock-logistics-coordination.png",
+  logisticsSupplyChainManagement: "/home-images/logistics-supply-chain-management.png",
   shipbuildingCareers: "/home-images/shipbuilding-careers.jpg",
+  shipConstructionFabrication: "/home-images/ship-construction-fabrication.png",
+  shipyardConstructionOperations: "/home-images/shipyard-construction-operations.png",
+  marineShipbuildingMaintenance: "/home-images/marine-shipbuilding-maintenance.png",
+  shipyardFabricationPipeFitting: "/home-images/shipyard-fabrication-pipe-fitting.png",
   fireSafetyCareers: "/home-images/fire-safety-careers.jpg",
+  firePreventionIndustrialSafety: "/home-images/fire-prevention-industrial-safety.png",
+  safetyManagementEmergencyResponse: "/home-images/safety-management-emergency-response.png",
+  fireSafetyHazardAccidentPrevention: "/home-images/fire-safety-hazard-accident-prevention.png",
+  workplaceSafetyHazardControl: "/home-images/workplace-safety-hazard-control.png",
   practicalCareerTraining: "/home-images/practical-career-training.jpg",
   riggingSlinging: "/home-images/rigging-slinging.jpg",
   banksmanTraining: "/home-images/banksman-training.jpg",

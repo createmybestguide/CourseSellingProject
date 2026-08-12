@@ -67,8 +67,8 @@ export function CountUpStats({ stats, className = "" }: { stats: Stat[]; classNa
 
         return (
           <div className="stat-tile rounded-lg p-4 text-center" key={item.label}>
-            <strong className="block text-2xl font-black text-[var(--brand)] md:text-3xl">{display}</strong>
-            <span className="mt-1 block text-xs font-bold uppercase text-slate-600">{item.label}</span>
+            <strong className="block text-xl font-extrabold text-[var(--brand-sky)] md:text-2xl">{display}</strong>
+            <span className="mt-1 block text-[0.7rem] font-semibold uppercase text-white/85">{item.label}</span>
           </div>
         );
       })}
