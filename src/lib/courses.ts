@@ -36,18 +36,18 @@ export const categories: {
   image: string;
 }[] = [
   {
-    slug: "offshore-training",
-    name: "Offshore Training",
-    description:
-      "Build a career in the global oil & gas industry with offshore and onshore training designed for beginners and aspiring professionals.",
-    image: imageAssets.offshoreTraining,
-  },
-  {
     slug: "onshore-training",
     name: "Onshore Training",
     description:
       "Build a successful career in the onshore oil & gas industry with practical training for refineries, petrochemical plants, power plants, construction projects, and oil & gas facilities.",
     image: imageAssets.onshoreTraining,
+  },
+  {
+    slug: "offshore-training",
+    name: "Offshore Training",
+    description:
+      "Build a career in the global oil & gas industry with offshore and onshore training designed for beginners and aspiring professionals.",
+    image: imageAssets.offshoreTraining,
   },
   {
     slug: "warehouse-logistics",

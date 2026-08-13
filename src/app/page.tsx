@@ -6,7 +6,7 @@ import { JsonLd } from "@/src/components/JsonLd";
 import { LeadForm } from "@/src/components/LeadForm";
 import { SectionHeading } from "@/src/components/SectionHeading";
 import { categories, mainCourses } from "@/src/lib/courses";
-import { careerSections, companyInfo, faqs, founderProfile, industriesWeServe, placementStories, recruiters, whyChooseUs } from "@/src/lib/content";
+import { careerSections, companyInfo, faqs, industriesWeServe, placementStories, recruiters, whyChooseUs } from "@/src/lib/content";
 import { imageAssets, siteConfig } from "@/src/lib/site";
 
 export default function Home() {
@@ -32,9 +32,9 @@ export default function Home() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgb(2_8_38_/_78%),rgb(2_8_38_/_48%)_46%,rgb(0_50_92_/_20%)),linear-gradient(0deg,rgb(2_8_38_/_70%),rgb(2_8_38_/_18%)_56%,rgb(2_8_38_/_46%))]" />
-        <div className="container relative z-10 grid min-h-[calc(100svh-5rem)] content-center gap-7 py-10 md:min-h-[720px] md:py-14">
-          <div className="hero-panel mx-auto -mt-6 max-w-4xl text-center md:-mt-10">
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgb(2_8_38_/_34%),rgb(2_8_38_/_16%)_46%,rgb(0_50_92_/_4%)),linear-gradient(0deg,rgb(2_8_38_/_32%),rgb(2_8_38_/_4%)_56%,rgb(2_8_38_/_14%))]" />
+        <div className="container relative z-10 grid min-h-[calc(100svh-5rem)] content-center gap-6 py-8 sm:gap-7 md:min-h-[648px] md:py-12">
+          <div className="hero-panel mx-auto max-w-4xl text-center md:-mt-8">
             <p className="mx-auto inline-flex rounded-full bg-white/10 px-4 py-2 text-xs font-black uppercase text-[var(--brand-sky)] shadow-sm ring-1 ring-white/15 md:text-sm">
               Industry Skills. Global Careers.
             </p>
@@ -45,28 +45,27 @@ export default function Home() {
             <p className="mx-auto mt-4 max-w-2xl text-sm font-semibold leading-6 text-blue-50 md:text-base">
               Your Gateway to Exciting Careers in Oil &amp; Gas, Energy, and Beyond.
             </p>
-            <div className="mx-auto mt-7 grid max-w-md gap-3 sm:grid-cols-2">
+            <div className="mx-auto mt-7 grid max-w-[17rem] gap-3">
               <Link href="/courses" className="btn btn-primary">Start Your Career</Link>
-              <Link href="/enroll" className="btn btn-accent">Apply Now</Link>
             </div>
           </div>
 
-          <div className="mt-12 grid gap-6 md:mt-18 md:grid-cols-2 md:gap-7">
-            <div className="hero-highlight-card h-full rounded-lg border border-white/25 bg-[rgb(255_143_0_/_36%)] p-5 text-center text-white shadow-2xl shadow-orange-950/20 backdrop-blur-lg">
-              <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border-2 border-white/75 text-2xl">
+          <div className="mx-auto mt-7 grid w-[84%] max-w-[19rem] gap-4 sm:w-[78%] sm:max-w-[52rem] md:mt-10 md:grid-cols-2 md:gap-5">
+            <div className="hero-highlight-card h-full rounded-lg border border-white/30 bg-[rgb(255_143_0_/_38%)] p-3 text-center text-white shadow-xl shadow-orange-950/10 backdrop-blur-sm md:p-5">
+              <span className="mx-auto grid h-8 w-8 place-items-center rounded-full border-2 border-white/75 text-sm md:h-11 md:w-11 md:text-lg">
                 <FaIndustry aria-hidden="true" />
               </span>
-              <h2 className="mt-4 text-base font-extrabold uppercase tracking-wide">Onshore Opportunities</h2>
-              <p className="mx-auto mt-2 max-w-md text-sm font-medium leading-6 text-orange-50">
+              <h2 className="mt-2 text-[0.68rem] font-extrabold uppercase leading-4 tracking-wide md:mt-3 md:text-sm">Onshore Opportunities</h2>
+              <p className="mx-auto mt-1.5 max-w-[15rem] text-[0.68rem] font-medium leading-4 text-orange-50 md:mt-2 md:max-w-sm md:text-[0.78rem] md:leading-5">
                 Build a successful career in onshore plants and refineries with global leaders.
               </p>
             </div>
-            <div className="hero-highlight-card h-full rounded-lg border border-white/25 bg-[rgb(0_89_199_/_36%)] p-5 text-center text-white shadow-2xl shadow-slate-950/20 backdrop-blur-lg">
-              <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border-2 border-white/70 text-2xl">
+            <div className="hero-highlight-card h-full rounded-lg border border-white/30 bg-[rgb(0_124_255_/_34%)] p-3 text-center text-white shadow-xl shadow-slate-950/10 backdrop-blur-sm md:p-5">
+              <span className="mx-auto grid h-8 w-8 place-items-center rounded-full border-2 border-white/70 text-sm md:h-11 md:w-11 md:text-lg">
                 <FaShip aria-hidden="true" />
               </span>
-              <h2 className="mt-4 text-base font-extrabold uppercase tracking-wide">Offshore Opportunities</h2>
-              <p className="mx-auto mt-2 max-w-md text-sm font-medium leading-6 text-blue-50">
+              <h2 className="mt-2 text-[0.68rem] font-extrabold uppercase leading-4 tracking-wide md:mt-3 md:text-sm">Offshore Opportunities</h2>
+              <p className="mx-auto mt-1.5 max-w-[15rem] text-[0.68rem] font-medium leading-4 text-blue-50 md:mt-2 md:max-w-sm md:text-[0.78rem] md:leading-5">
                 Explore high-growth careers on offshore rigs and offshore facilities worldwide.
               </p>
             </div>
@@ -195,22 +194,6 @@ export default function Home() {
               <Link className="btn btn-primary mt-auto" href={section.href}>{section.cta}</Link>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section className="section bg-[var(--surface)]">
-        <div className="container reveal grid gap-10 lg:grid-cols-[0.8fr_1fr] lg:items-center">
-          <div>
-            <p className="eyebrow">About the Founder & Managing Director</p>
-            <h2 className="mt-3 text-3xl font-bold text-slate-950 md:text-4xl">{founderProfile.name}</h2>
-            <p className="mt-3 text-sm font-black uppercase tracking-wide text-[var(--brand)]">{founderProfile.role}</p>
-          </div>
-          <div className="grid gap-4">
-            {founderProfile.paragraphs.map((paragraph) => (
-              <p className="leading-7 text-slate-600" key={paragraph}>{paragraph}</p>
-            ))}
-            <p className="text-lg font-black text-[var(--accent)]">&quot;{founderProfile.quote}&quot;</p>
-          </div>
         </div>
       </section>
 
