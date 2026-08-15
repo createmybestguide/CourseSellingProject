@@ -45,12 +45,12 @@ export default function Home() {
             <p className="mx-auto mt-4 max-w-2xl text-sm font-semibold leading-6 text-blue-50 md:text-base">
               Your Gateway to Exciting Careers in Oil &amp; Gas, Energy, and Beyond.
             </p>
-            <div className="mx-auto mt-7 grid max-w-[17rem] gap-3">
+            <div className="mx-auto mt-7 hidden max-w-[17rem] gap-3 md:grid">
               <Link href="/courses" className="btn btn-primary">Start Your Career</Link>
             </div>
           </div>
 
-          <div className="mx-auto mt-7 grid w-[84%] max-w-[19rem] gap-4 sm:w-[78%] sm:max-w-[52rem] md:mt-10 md:grid-cols-2 md:gap-5">
+          <div className="mx-auto mt-7 hidden w-[84%] max-w-[19rem] gap-4 sm:w-[78%] sm:max-w-[52rem] md:mt-10 md:grid md:grid-cols-2 md:gap-5">
             <div className="hero-highlight-card h-full rounded-lg border border-white/30 bg-[rgb(255_143_0_/_38%)] p-3 text-center text-white shadow-xl shadow-orange-950/10 backdrop-blur-sm md:p-5">
               <span className="mx-auto grid h-8 w-8 place-items-center rounded-full border-2 border-white/75 text-sm md:h-11 md:w-11 md:text-lg">
                 <FaIndustry aria-hidden="true" />
