@@ -470,6 +470,15 @@ img {
   isolation: isolate;
 }
 
+.hero-bg-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-bg-image-mobile {
+  display: none;
+}
+
 .hero-highlight-card {
   animation: float-card 4.5s ease-in-out infinite;
 }
@@ -586,6 +595,26 @@ img {
 }
 
 @media (max-width: 767px) {
+  .hero-shell {
+    background: #020826;
+  }
+
+  .hero-bg-image-desktop {
+    display: none;
+  }
+
+  .hero-bg-image-mobile {
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .hero-overlay-layer {
+    background:
+      linear-gradient(180deg, rgb(2 8 38 / 42%), rgb(2 8 38 / 74%) 38%, rgb(2 8 38 / 88%)),
+      linear-gradient(90deg, rgb(2 8 38 / 28%), rgb(2 8 38 / 16%));
+  }
+
   .container {
     width: min(100% - 1.25rem, 1180px);
   }

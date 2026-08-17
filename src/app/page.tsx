@@ -25,14 +25,22 @@ export default function Home() {
       <JsonLd data={faqSchema} />
       <section className="hero-shell relative overflow-hidden bg-[var(--brand-deep)] text-white">
         <Image
-          className="object-cover object-center"
+          className="hero-bg-image hero-bg-image-desktop"
           src={imageAssets.hero}
           alt="Offshore oil platform and industrial energy career background"
           fill
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgb(2_8_38_/_34%),rgb(2_8_38_/_16%)_46%,rgb(0_50_92_/_4%)),linear-gradient(0deg,rgb(2_8_38_/_32%),rgb(2_8_38_/_4%)_56%,rgb(2_8_38_/_14%))]" />
+        <Image
+          className="hero-bg-image hero-bg-image-mobile"
+          src={imageAssets.heroMobile}
+          alt="Oil and gas refinery platform mobile background"
+          fill
+          priority
+          sizes="100vw"
+        />
+        <div className="hero-overlay-layer absolute inset-0 bg-[linear-gradient(90deg,rgb(2_8_38_/_34%),rgb(2_8_38_/_16%)_46%,rgb(0_50_92_/_4%)),linear-gradient(0deg,rgb(2_8_38_/_32%),rgb(2_8_38_/_4%)_56%,rgb(2_8_38_/_14%))]" />
         <div className="container relative z-10 grid min-h-[calc(100svh-5rem)] content-center gap-6 py-8 sm:gap-7 md:min-h-[648px] md:py-12">
           <div className="hero-panel mx-auto max-w-4xl text-center md:-mt-8">
             <p className="mx-auto inline-flex rounded-full bg-white/10 px-4 py-2 text-xs font-black uppercase text-[var(--brand-sky)] shadow-sm ring-1 ring-white/15 md:text-sm">

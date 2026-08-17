@@ -27,17 +27,22 @@ export default function GalleryPage() {
         <SectionHeading eyebrow="Gallery" title="Training sessions and placement highlights" text="Explore DVR Global Career training and career development activities across industrial skills programs." />
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {visibleItems.map((item) => (
-            <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-slate-100 shadow-md" key={item.image}>
-              <Image
-                className="object-cover"
-                src={item.image}
-                alt={item.title}
-                fill
-                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-              />
-            </div>
-          ))}
+          {visibleItems.map((item, index) => {
+            const galleryIndex = (page - 1) * ITEMS_PER_PAGE + index;
+            const shouldFocusTop = [0, 5, 10, 11].includes(galleryIndex);
+
+            return (
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-slate-100 shadow-md" key={item.image}>
+                <Image
+                  className={`object-cover ${shouldFocusTop ? "object-top" : ""}`}
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                />
+              </div>
+            );
+          })}
         </div>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">

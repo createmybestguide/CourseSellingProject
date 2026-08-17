@@ -45,6 +45,17 @@ export function Footer() {
             {/* <Link href="/admin" className="hover:text-white">Admin</Link> */}
           </div>
         </div>
+        <p className="container mt-4 text-center text-xs text-blue-100/70">
+          Developed with ❤️ at{" "}
+          <a
+            href="https://www.mybestguide.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-blue-50 transition hover:text-white hover:underline"
+          >
+            MyBestGude
+          </a>
+        </p>
       </div>
     </footer>
   );

@@ -27,6 +27,7 @@ export const navLinks = [
 
 export const imageAssets = {
   hero: "/home-images/dvr-front-page-sunset-hero.png",
+  heroMobile: "/home-images/mobile-hero-refinery.png",
   classroom: "/home-images/practical-career-training.jpg",
   ship: "/home-images/shipbuilding-careers.jpg",
   safety: "/home-images/fire-safety-careers.jpg",
