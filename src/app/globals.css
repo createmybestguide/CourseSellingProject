@@ -611,8 +611,8 @@ img {
 
   .hero-overlay-layer {
     background:
-      linear-gradient(180deg, rgb(2 8 38 / 16%), rgb(2 8 38 / 34%) 44%, rgb(2 8 38 / 50%)),
-      linear-gradient(90deg, rgb(2 8 38 / 10%), rgb(2 8 38 / 6%));
+      linear-gradient(#02082600, #03030300 38%, #686b7900),
+      linear-gradient(90deg, #02082647, #02082629);
   }
 
   .container {
