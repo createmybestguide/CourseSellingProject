@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaArrowRight, FaBriefcase, FaCertificate, FaCheckCircle, FaIndustry, FaPhoneAlt, FaShip, FaUserGraduate } from "react-icons/fa";
+import type { IconType } from "react-icons";
+import { FaArrowRight, FaBriefcase, FaCertificate, FaCheckCircle, FaGlobeAsia, FaIndustry, FaPhoneAlt, FaShip, FaUserGraduate, FaUsers } from "react-icons/fa";
 import { CourseCard } from "@/src/components/CourseCard";
 import { JsonLd } from "@/src/components/JsonLd";
 import { LeadForm } from "@/src/components/LeadForm";
@@ -8,6 +9,13 @@ import { SectionHeading } from "@/src/components/SectionHeading";
 import { categories, mainCourses } from "@/src/lib/courses";
 import { careerSections, companyInfo, faqs, industriesWeServe, placementStories, recruiters, whyChooseUs } from "@/src/lib/content";
 import { imageAssets, siteConfig } from "@/src/lib/site";
+
+const mobileHeroFeatures: Array<{ Icon: IconType; label: string }> = [
+  { Icon: FaUserGraduate, label: "Global Career Opportunities" },
+  { Icon: FaCertificate, label: "Expert Career Guidance" },
+  { Icon: FaUsers, label: "Trusted by Thousands of Professionals" },
+  { Icon: FaGlobeAsia, label: "Placement Support Worldwide" },
+];
 
 export default function Home() {
   const faqSchema = {
@@ -41,7 +49,61 @@ export default function Home() {
           sizes="100vw"
         />
         <div className="hero-overlay-layer absolute inset-0 bg-[linear-gradient(90deg,rgb(2_8_38_/_34%),rgb(2_8_38_/_16%)_46%,rgb(0_50_92_/_4%)),linear-gradient(0deg,rgb(2_8_38_/_32%),rgb(2_8_38_/_4%)_56%,rgb(2_8_38_/_14%))]" />
-        <div className="container relative z-10 grid min-h-[calc(100svh-5rem)] content-center gap-6 py-8 sm:gap-7 md:min-h-[648px] md:py-12">
+        <div className="mobile-hero-content relative z-10 px-4 pb-4 pt-4 md:hidden">
+          <div className="mobile-hero-copy">
+            <h1>
+              Global Opportunities
+              <span>Endless Possibilities</span>
+            </h1>
+            <p>
+              Your Gateway to Exciting Careers
+              <span>in <strong>Oil &amp; Gas, Energy,</strong> and Beyond</span>
+            </p>
+            <div className="mobile-hero-actions">
+              <Link href="/courses" className="mobile-hero-btn mobile-hero-btn-primary">
+                Explore Careers <FaArrowRight aria-hidden="true" />
+              </Link>
+              <Link href="/enroll" className="mobile-hero-btn mobile-hero-btn-accent">
+                Apply Now <FaArrowRight aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+
+          <div className="mobile-hero-bottom">
+            <div className="mobile-opportunity-stack" aria-label="Career opportunity highlights">
+              <Link href="/categories/offshore-training" className="mobile-opportunity-card mobile-opportunity-card-offshore">
+                <span className="mobile-opportunity-icon"><FaShip aria-hidden="true" /></span>
+                <span className="mobile-opportunity-copy">
+                  <strong>Offshore <span>Opportunities</span></strong>
+                  <small>Explore high-growth careers on offshore rigs and offshore facilities worldwide.</small>
+                </span>
+                <span className="mobile-opportunity-image" aria-hidden="true">
+                  <Image src="/home-images/mobile-card-offshore.png" alt="" fill sizes="45vw" />
+                </span>
+              </Link>
+              <Link href="/categories/onshore-training" className="mobile-opportunity-card mobile-opportunity-card-onshore">
+                <span className="mobile-opportunity-icon"><FaIndustry aria-hidden="true" /></span>
+                <span className="mobile-opportunity-copy">
+                  <strong>Onshore <span>Opportunities</span></strong>
+                  <small>Build a successful career in onshore plants and refineries with global leaders.</small>
+                </span>
+                <span className="mobile-opportunity-image" aria-hidden="true">
+                  <Image src="/home-images/mobile-card-onshore.png" alt="" fill sizes="45vw" />
+                </span>
+              </Link>
+            </div>
+
+            <div className="mobile-hero-feature-grid" aria-label="DVR Global Career support features">
+              {mobileHeroFeatures.map(({ Icon, label }) => (
+                <div className="mobile-hero-feature" key={label}>
+                  <span><Icon aria-hidden="true" /></span>
+                  <p>{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="desktop-hero-content container relative z-10 grid min-h-[calc(100svh-5rem)] content-center gap-6 py-8 sm:gap-7 md:min-h-[648px] md:py-12">
           <div className="hero-panel mx-auto max-w-4xl text-center md:-mt-8">
             <p className="mx-auto inline-flex rounded-full bg-white/10 px-4 py-2 text-xs font-black uppercase text-[var(--brand-sky)] shadow-sm ring-1 ring-white/15 md:text-sm">
               Industry Skills. Global Careers.

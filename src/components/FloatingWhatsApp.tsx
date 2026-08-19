@@ -10,8 +10,7 @@ export function FloatingWhatsApp() {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed z-[9999] grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-2xl text-white shadow-lg shadow-slate-900/25 transition-transform duration-200 hover:scale-110"
-      style={{ bottom: "24px", right: "24px" }}
+      className="fixed bottom-3 right-3 z-[9999] grid h-10 w-10 place-items-center rounded-full bg-[#25D366] text-lg text-white shadow-lg shadow-slate-900/25 transition-transform duration-200 hover:scale-110 sm:bottom-6 sm:right-6 sm:h-14 sm:w-14 sm:text-2xl"
       aria-label="Chat on WhatsApp"
     >
       <FaWhatsapp />
